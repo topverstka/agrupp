@@ -43,7 +43,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
-    line-height: 1.5;
+    line-height: 1.3;
     background: $bg-page;
 
     &._lock {
@@ -60,6 +60,11 @@ body {
     overflow: hidden;
 }
 
+// Библиотеки
+@import 'libs/_aos';
+@import 'libs/_lightgallery';
+@import 'libs/_swiper';
+
 @import '_grid'; // Сетка
 
 // Компоненты
@@ -73,14 +78,11 @@ body {
 
 // Секции
 @import 'sections/_header';
+@import 'sections/_main-slider';
+@import 'sections/_main-nav';
 @import 'sections/_footer';
 
 // Страницы
-
-// Библиотеки
-@import 'libs/_aos';
-@import 'libs/_lightgallery';
-@import 'libs/_swiper';
 
 // Анимация
 @import 'components/_animation';

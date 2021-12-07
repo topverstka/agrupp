@@ -1,0 +1,51 @@
+.header {
+    padding: 8px 0;
+}
+
+.header__wrap {
+
+}
+
+.header__body {
+    display: flex;
+    align-items: center;
+}
+
+.header__elem {
+
+}
+
+.header__social {
+    // display: flex; 
+}
+
+.header__social-list {
+    display: flex;
+    align-items: center;
+}
+
+.header__social-item {
+    width: 20px;
+    height: 20px;
+    display: block;
+
+    &:not(:first-child) {
+        margin: 0 0 0 10px;
+    }
+}
+
+.header__separator {
+    width: 1px;
+    height: 20px;
+    background: #E8E9ED;
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.header__link {
+
+}
+
+.header__link-faq {
+    margin: 0 0 0 auto;
+}
