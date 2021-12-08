@@ -3628,7 +3628,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
           border-radius: 0;
 }
 
+.main_small .main-nav__icon {
+  width: 20px;
+  height: 20px;
+}
+
 .main_small .main-nav__title {
+  text-align: left;
   margin: 0 0 0 8px;
 }
 
