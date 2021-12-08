@@ -1,0 +1,193 @@
+.employee-card {
+    padding: 10px 0 0 0;
+}
+
+.employee-card_best {
+
+    & .employee-card__body {
+        padding: 20px 20px 20px 30px;
+    }
+}
+
+.employee-card__body {
+    display: flex;
+    align-items: center;
+}
+
+.employee-card__img-block {
+    position: relative;
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    // display: flex;
+    // align-self: flex-start;
+    // justify-content: flex-end;
+}
+
+.employee-card__img {
+    // position: absolute;
+    // z-index: -1;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+
+    & img {
+        object-fit: cover;
+    }
+}
+
+.employee-card__reward-list {
+    // margin: -10px -10px 0 0;
+}
+
+.employee-card__reward {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    
+    &:nth-child(1) {
+        z-index: 2;
+        top: -10px;
+        right: -10px;
+    }
+    
+    &:nth-child(2) {
+        z-index: 3;
+        top: -10px;
+        right: -20px;
+    }
+    
+    &:nth-child(3) {
+        z-index: 1;
+        top: -10px;
+        right: 0;
+    }
+}
+
+.employee-card__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 30px;
+}
+
+.employee-card__title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.employee-card__work-pos {
+    font-weight: 400;
+    margin: 5px 0 0 0;
+}
+
+.employee-card__work-time,
+.employee-card__city {
+    font-size: 12px;
+    font-weight: 500;
+    color: $second;
+}
+
+.employee-card__present {
+    position: relative;
+    margin: 6px 0 0 0;
+}
+
+.employee-card__present-send {
+    width: fit-content;
+    font-weight: 500;
+    color: $accent;
+    text-decoration: underline;
+
+    &:hover {
+
+        & + .employee-card__present-block {
+            bottom: -16px;
+            visibility: visible;
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}
+
+.employee-card__present-block {
+    position: absolute;
+    z-index: 1;
+    bottom: -20px;
+    left: 0;
+    transform: translate(0, 100%);
+    border: 1px solid $outline;
+    border-radius: 10px;
+    box-shadow: 0px 30px 90px rgba(43, 65, 81, 0.11);
+    transition: $tr;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover {
+        bottom: -16px;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -2;
+        top: -5px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        transform: rotate(45deg);
+        border: 1px solid $outline;
+        border-radius: 5px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        transform: translate(0, -100%);
+    }
+}
+
+.employee-card__present-body {
+    background: #fff;
+    padding: 15px 20px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.employee-card__present-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.employee-card__present-list {
+    display: flex;
+    align-items: center;
+    margin: 10px 0 0 0;
+}
+
+.employee-card__present-item {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: $tr;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &:not(:first-child) {
+        margin: 0 0 0 5px;
+    }
+}

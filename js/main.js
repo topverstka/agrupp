@@ -139,26 +139,7 @@ function menu() {
 
 const advantagesSlider = new Swiper('.main-slider__container', {
 	spaceBetween: 0,
-	// centeredSlides: true,
-	// slidesPerView: 1.33, // Кол-во показываемых слайдов
-	// autoHeight: true,
-	// slidesPerView: 'auto',
-	loop: true, // Бесконечный слайдер
-	// freeMode: true, // Слайдеры не зафиксированны
-
-	// breakpoints: {
-	// 	1200: {
-	// 		slidesPerView: 'auto',
-	// 	},
-	// 	700: {
-	// 		slidesPerView: 1.1,
-	// 	},
-	// 	0: {
-	// 		slidesPerView: 1.08,
-	// 		spaceBetween: 8,
-	// 		centeredSlides: false,
-	// 	}
-	// },
+	loop: true,
 
 	navigation: {
 		nextEl: '.main-slider__arrow-next',
@@ -170,38 +151,31 @@ const advantagesSlider = new Swiper('.main-slider__container', {
     },
 });
 
-// const swiper = new Swiper('.swiper-container', {
-  
-//   slidesPerView: 1, // Кол-во показываемых слайдов
-//   spaceBetween: 0, // Расстояние между слайдами
-//   loop: true, // Бесконечный слайдер
-//   freeMode: true, // Слайдеры не зафиксированны
+// Аккордеон в news-section
+accNewsSection()
+function accNewsSection() {
+    const acc = find('.news-section__content-wrap')
+    const accHeader = acc.querySelector('.acc-header')
+    const accBody = acc.querySelector('.acc-body')
+    const tabElems = accHeader.querySelectorAll('[data-tab-head]')
+    const tabBodyElems = accBody.querySelectorAll('[data-tab-body]')
 
-//   breakpoints: {
-//     1200: {
+    for (let i = 0; i < tabElems.length; i++) {
+        const tab = tabElems[i];
+        
+        tab.addEventListener('click', () => {
+            const dataAttr = tab.dataset.tabHead
+            const tabBody = accBody.querySelector(`[data-tab-body=${dataAttr}]`)
 
-//     },
-//     700: {
+            removeAll(tabElems, '_active')
+            tab.classList.add('_active')
 
-//     },
-//     400: {
+            removeAll(tabBodyElems, '_active')
+            tabBody.classList.add('_active')
+        })
+    }
+}
 
-//     }
-//   },
-
-//   pagination: {
-//     el: '.swiper-pagination',
-//   },
-
-//   navigation: {
-//     nextEl: '.swiper__arrow-next',
-//     prevEl: '.swiper__arrow-prev',
-//   },
-
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
-// });
 
 // Функции для модальных окон
 // modal()

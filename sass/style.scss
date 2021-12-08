@@ -40,8 +40,8 @@
 body {
     font-family: $ffMain;
     color: $main;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 500;
     font-style: normal;
     line-height: 1.3;
     background: $bg-page;
@@ -71,6 +71,8 @@ body {
 @import 'components/_buttons';
 @import 'components/_forms';
 @import 'components/_modal';
+@import 'components/_section';
+@import 'components/_employee-card';
  
 // Текстовые компоненты
 @import 'components/text/_text';
@@ -80,6 +82,10 @@ body {
 @import 'sections/_header';
 @import 'sections/_main-slider';
 @import 'sections/_main-nav';
+@import 'sections/_news-section';
+@import 'sections/_rules-section';
+@import 'sections/_fame-section';
+@import 'sections/_best-section';
 @import 'sections/_footer';
 
 // Страницы

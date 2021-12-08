@@ -9,19 +9,19 @@
         padding: 15px 5px;
 
         &:hover {
-            border-color: $accent-hover;
-        }
-
-        &._active {
             background: $accent;
-
+    
             & .main-nav__icon-block {
                 background: none;
             }
-
+    
             & .main-nav__title {
                 color: #fff;
             }
+        }
+
+        &._active {
+            border-color: $accent;
         }
     }
 
@@ -55,6 +55,25 @@
     &:hover {
 
         & .main-nav__icon-block {
+            background-color: $accent;
+            border-color: $accent;
+        }
+
+        & .main-nav__icon {
+
+            & svg path {
+                fill: #fff !important;
+            }
+        }
+
+        & .main-nav__title {
+            color: $accent;
+        }
+    }
+
+    &._active {
+
+        & .main-nav__icon-block {
             border-color: $accent-hover;
         }
 
@@ -63,25 +82,6 @@
             & svg path {
                 fill: $accent;
             }
-        }
-    }
-
-    &._active {
-
-        & .main-nav__icon-block {
-            background-color: $accent;
-            border-color: $accent;
-        }
-
-        & .main-nav__icon {
-
-            & svg path {
-                fill: #fff;
-            }
-        }
-
-        & .main-nav__title {
-            color: $accent;
         }
     }
 }
@@ -109,6 +109,7 @@
 .main-nav__title {
     font-size: 14px;
     font-weight: 500;
+    text-align: center;
     margin: 5px 0 0 0;
     transition: $tr;
 }
