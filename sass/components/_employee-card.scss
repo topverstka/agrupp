@@ -1,12 +1,65 @@
 .employee-card {
+    background: #fff;
     padding: 10px 0 0 0;
 }
 
 .employee-card_best {
+    display: none;
+
+    &._show {
+        display: block; 
+        // animation: showElem .3s linear forwards;
+    }
 
     & .employee-card__body {
         padding: 20px 20px 20px 30px;
     }
+
+    & .employee-card__popup-block {
+        width: 260px;
+    }
+
+    // Появление всплывашки сверху у последних 3 карточек
+    // &._show:nth-last-of-type(-n+3) {
+    // // &._show:nth-child(-n+3) {
+    //     background: #000;
+
+    //     & .employee-card__popup-btn {
+    
+    //         &:hover {
+            
+    //             & + .employee-card__popup-block {
+    //                 top: -16px;
+    //                 bottom: auto !important;
+    //             }
+    //         }
+    //     }
+
+    //     & .employee-card__popup-block {
+    //         transform: translate(0, -100%);
+    //         top: -20px;
+    //         bottom: auto !important;
+    //         transition: $tr;
+
+    //         &:hover {
+    //             top: -16px;
+    //             bottom: auto !important;
+    //         }
+
+    //         &::before {
+    //             top: auto;
+    //             bottom: -5px;
+    //             transform: rotate(135deg);
+    //         }
+
+    //         &::after {
+    //             top: auto;
+    //             bottom: 0;
+    //             height: 25px;
+    //             transform: translate(0, 100%);
+    //         }
+    //     }
+    // }
 }
 
 .employee-card__body {
@@ -19,16 +72,9 @@
     min-width: 80px;
     width: 80px;
     height: 80px;
-    // display: flex;
-    // align-self: flex-start;
-    // justify-content: flex-end;
 }
 
 .employee-card__img {
-    // position: absolute;
-    // z-index: -1;
-    // top: 0;
-    // left: 0;
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -36,6 +82,21 @@
 
     & img {
         object-fit: cover;
+    }
+
+    & span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 500;
+        color: #fff;
+        text-transform: uppercase;
+        pointer-events: none;
+        user-select: none;
     }
 }
 
@@ -90,20 +151,27 @@
     color: $second;
 }
 
-.employee-card__present {
+// Всплывашка
+.employee-card__popup {
     position: relative;
     margin: 6px 0 0 0;
 }
 
-.employee-card__present-send {
+.employee-card__popup_presents {
+
+}
+
+
+.employee-card__popup-btn {
     width: fit-content;
+    font-size: 14px;
     font-weight: 500;
     color: $accent;
     text-decoration: underline;
 
     &:hover {
 
-        & + .employee-card__present-block {
+        & + .employee-card__popup-block {
             bottom: -16px;
             visibility: visible;
             opacity: 1;
@@ -112,7 +180,7 @@
     }
 }
 
-.employee-card__present-block {
+.employee-card__popup-block {
     position: absolute;
     z-index: 1;
     bottom: -20px;
@@ -159,25 +227,27 @@
     }
 }
 
-.employee-card__present-body {
+.employee-card__popup-body {
+    display: flex;
+    flex-direction: column;
     background: #fff;
-    padding: 15px 20px 10px;
     border-radius: 10px;
+    padding: 15px 20px 10px;
     overflow: hidden;
 }
 
-.employee-card__present-title {
+.employee-card__popup-title {
     font-size: 18px;
     font-weight: 600;
 }
 
-.employee-card__present-list {
+.employee-card__popup-present-list {
     display: flex;
     align-items: center;
     margin: 10px 0 0 0;
 }
 
-.employee-card__present-item {
+.employee-card__popup-present {
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -190,4 +260,103 @@
     &:not(:first-child) {
         margin: 0 0 0 5px;
     }
+}
+
+// Блок с информацией о сотруднике
+.employee-card__popup-info {
+    display: flex;
+    align-items: center;
+    margin: 0 0 15px 0;
+}
+
+.employee-card__popup-info-img {
+    position: relative;
+    width: 32px;
+    height: 32px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 110%;
+        height: 110%;
+
+        transform: translate(-50%, -50%);
+        background: linear-gradient(90deg, #EEBE47 0%, #F8DB77 12.04%, #FFEE96 20.97%, #A2621E 44.62%, #EEA54C 66.67%, #EEBE47 100%);
+        border-radius: 50%;
+    }
+
+    & img {
+        position: relative;
+        z-index: 1;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+}
+
+.employee-card__popup-info-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 10px;
+}
+
+.employee-card__popup-info-title {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.employee-card__popup-info-work-pos {
+    font-size: 10px;
+    font-weight: 500;
+    color: $second;
+    margin: 1px 0 0 0;
+}
+
+.employee-card__popup-award-list {
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 0 0;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #AFAFAF;
+    }
+}
+
+.employee-card__popup-award {
+    display: flex;
+    align-items: center;
+
+    &:not(:first-child) {
+        margin: 10px 0 0 0;
+    }
+
+    &:hover {
+
+        & .employee-card__popup-award-title {
+            color: $accent;
+        }
+    }
+}
+
+.employee-card__popup-award-img {
+    width: 40px;
+    height: 40px;
+}
+
+.employee-card__popup-award-title {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 0 0 10px;
+    transition: $tr;
 }

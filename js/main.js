@@ -152,26 +152,31 @@ const advantagesSlider = new Swiper('.main-slider__container', {
 });
 
 // Аккордеон в news-section
-accNewsSection()
-function accNewsSection() {
-    const acc = find('.news-section__content-wrap')
+tabsComponents()
+function tabsComponents() {
+    const acc = find('.acc')
     const accHeader = acc.querySelector('.acc-header')
     const accBody = acc.querySelector('.acc-body')
     const tabElems = accHeader.querySelectorAll('[data-tab-head]')
-    const tabBodyElems = accBody.querySelectorAll('[data-tab-body]')
+    const totalTabItemElems = accBody.querySelectorAll('[data-tab-item]')
 
     for (let i = 0; i < tabElems.length; i++) {
         const tab = tabElems[i];
         
         tab.addEventListener('click', () => {
             const dataAttr = tab.dataset.tabHead
-            const tabBody = accBody.querySelector(`[data-tab-body=${dataAttr}]`)
+            const tabItemElems = (dataAttr === 'all') ? accBody.querySelectorAll(`[data-tab-item]`) : accBody.querySelectorAll(`[data-tab-item="${dataAttr}"]`)
+
+            removeAll(totalTabItemElems, '_show')
 
             removeAll(tabElems, '_active')
             tab.classList.add('_active')
 
-            removeAll(tabBodyElems, '_active')
-            tabBody.classList.add('_active')
+            for (let i = 0; i < tabItemElems.length; i++) {
+                const tabItem = tabItemElems[i];
+                    
+                tabItem.classList.add('_show')
+            }
         })
     }
 }
