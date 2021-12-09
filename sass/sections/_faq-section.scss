@@ -1,0 +1,89 @@
+.faq-section {
+
+}
+
+.faq-section__wrap {
+
+}
+
+.faq-section__body {
+
+}
+
+.faq-section__list {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.faq-section__card {
+    position: absolute;
+    background: #fff;
+    border: 1px solid $outline;
+    border-radius: 10px;
+    transition: $tr;
+
+    &:hover {
+        box-shadow: 0px 9px 25px rgba(52, 58, 74, 0.1);
+        transform: translate(0, -5px);
+
+        & .faq-section__card-header-title {
+            font-weight: 700;
+        }
+
+        & .faq-section__card-header-arrow {
+            background: $accent;
+            border-color: $accent;
+        }
+
+        & .faq-section__card-header-arrow-icon {
+
+            & svg path {
+                fill: #fff;
+            }
+        }
+    }
+}
+
+// Шапка карточки
+.faq-section__card-header {
+    cursor: pointer;
+}
+
+.faq-section__card-header-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px 14px 30px;
+}
+
+.faq-section__card-header-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.faq-section__card-header-arrow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $main;
+    border-radius: 50%;
+    transition: $tr;
+}
+
+.faq-section__card-header-arrow-icon {
+    width: 11px;
+    height: 11px;
+
+    & svg path {
+        transition: $tr;
+    }
+}
+
+.faq-section__card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: $tr;
+}

@@ -152,7 +152,7 @@ const advantagesSlider = new Swiper('.main-slider__container', {
 });
 
 // Аккордеон в news-section
-tabsComponents()
+if (find('.acc')) tabsComponents()
 function tabsComponents() {
     const acc = find('.acc')
     const accHeader = acc.querySelector('.acc-header')
@@ -176,6 +176,157 @@ function tabsComponents() {
                 const tabItem = tabItemElems[i];
                     
                 tabItem.classList.add('_show')
+            }
+        })
+    }
+}
+
+// Позиционирование карточек в контейнере списка карточек faq
+cardFAQ()
+function cardFAQ() {
+    const container = find('.faq-section__list')
+    const cardElems = findAll('.faq-section__card')
+    let countColumn = 2 // кол-во колонок
+    const gapColumn = 20 // отступ между колонками
+    const gapRow = 10 // отступ между строками
+    const countCard = cardElems.length // кол-во карточек
+
+    if (window.innerWidth < 768) countColumn = 1
+    console.log(window.innerWidth)
+    window.addEventListener('resize', e => {
+        if (window.innerWidth < 768) countColumn = 1
+        widthCardFAQ()
+        positionCardFAQ()
+    })
+
+    widthCardFAQ()
+    function widthCardFAQ() {
+        // Ширина карточек
+        const containerWidth = container.offsetWidth
+        const cardWidth = containerWidth / countColumn - gapColumn / 2
+
+        for (let i = 0; i < cardElems.length; i++) {
+            const card = cardElems[i];
+            card.style.width = cardWidth + 'px'
+        }
+    }
+    
+    positionCardFAQ()
+    function positionCardFAQ() {
+        // console.log('ok')
+        // Позиционирование карточек
+        let r = 0 // номер строки, начиная с нуля
+    
+        for (let i = 0; i < cardElems.length; i++) {
+            const card = cardElems[i];
+            const cardHeight = card.offsetHeight
+            const cardTop = (i === 0 || i === 1) ? 0 : cardHeight + gapRow // Если итерируется первая или вторая карточка, то для них значение top = 0, у остальных cardTop равен высоте одной карточки умноженной на оступ между ними. Далее это значение будет увеличиваться в n-раз в зависимости от того, какая сейчас строка
+    
+            // Если это первая строка
+            if (r === 0) {
+                card.style.top = cardTop + 'px'
+            }
+            // В остальных случаях
+            else {
+                card.style.top = cardTop * r + 'px'
+            }
+            
+            // При итерации каждой второй карточки
+            if ((i+1)%2 === 0) {
+                card.style.right = 0 
+                r++ // увеличивается номер строки на 1
+            }
+        }
+    }
+
+    // Размер списка с карточками с частозадаваемыми вопросами
+    // container.style.height = countCard / countColumn + 'px'
+}
+
+// Размер списка с карточками с частозадаваемыми вопросами
+sizeContainerFAQ()
+function sizeContainerFAQ() {
+    const container = find('.faq-section__list')
+    const cardElems = findAll('.faq-section__card')
+
+
+}
+
+// positionCardFAQ()
+// function positionCardFAQ() {
+//     const container = find('.faq-section__list')
+//     const cardElems = findAll('.faq-section__card')
+//     const countColumn = 1 // кол-во колонок
+//     const gapColumn = 20 // отступ между колонками
+//     const gapRow = 10 // отступ между строками
+
+//     // Ширина карточек
+//     const containerWidth = container.offsetWidth
+//     const cardWidth = containerWidth / countColumn - gapColumn / 2
+
+//     for (let i = 0; i < cardElems.length; i++) {
+//         const card = cardElems[i];
+//         card.style.width = cardWidth + 'px'
+//     }
+
+//     // Позиционирование карточек
+//     let r = 0 // номер строки, начиная с нуля
+//     let n = 0 // номер карточки в каждой строке. Равно нулю при переходе на другую строку
+
+//     for (let i = 0; i < cardElems.length; i++) {
+//         const card = cardElems[i];
+//         const cardHeight = card.offsetHeight
+//         const cardTop = (i+1 <= countColumn) ? 0 : cardHeight + gapRow // Если итерируется первая или вторая карточка, то для них значение top = 0, у остальных cardTop равен высоте одной карточки умноженной на оступ между ними. Далее это значение будет увеличиваться в n-раз в зависимости от того, какая сейчас строка
+//         // console.log(i+1, countColumn)
+//         // Если это первая строка
+//         if (r === 0) {
+//             card.style.top = cardTop + 'px'
+//             // console.log(card)
+//         }
+//         // В остальных случаях
+//         else {
+//             card.style.top = cardTop * r + 'px'
+//         }
+//         // console.log(324*0)
+//         // console.log(n)
+//         card.style.left = (cardWidth * n) + ((countColumn - 1) * n * gapColumn / 2) + 'px'
+//         // if ((i+1)%(n+1+r) === 0) {
+//         //     console.log((cardWidth * n) + ((countColumn - 1) * n) + 'px', card, i, n, r)
+//         // }
+
+//         n++
+        
+//         // При итерации последней карточки в каждой строке
+//         if ((i+1)%countColumn === 0) {
+//             // card.style.left = cardWidth + 
+//             r++ // увеличивается номер строки на 1
+//             n = 0 // обнуляем номер карточки
+//         }
+//     }
+// }
+
+// аккордеоны в faq
+accFAQ()
+function accFAQ() {
+    const accElems = findAll('.acc')
+
+    for (let i = 0; i < accElems.length; i++) {
+        const acc = accElems[i];
+        
+        const accHeader = acc.querySelector('.acc-header')
+        const accBody = acc.querySelector('.acc-body')
+    
+        // console.log(accBody.offsetHeight, accBody.clientHeight, accBody.scrollHeight)
+        const box = find('#box')
+        console.log(box.scrollHeight)
+
+        box.previousElementSibling.addEventListener('click', e => {
+            box.classList.toggle('_show')
+            if (box.classList.contains('_show')) {
+                box.style.maxHeight = box.scrollHeight + 'px'
+            }
+            else {
+                box.style.maxHeight = '0px'
             }
         })
     }
@@ -305,3 +456,4 @@ function modal() {
         })
     }
 }
+
