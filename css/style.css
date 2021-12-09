@@ -3603,6 +3603,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   display: inline-block;
 }
 
+.header__link {
+  text-decoration: underline;
+}
+
 .header__link-faq {
   margin: 0 0 0 auto;
 }
@@ -4229,6 +4233,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .faq-section__card-body {
   max-height: 0;
   overflow: hidden;
+  -webkit-transition: var(--tr);
+  -o-transition: var(--tr);
+  transition: var(--tr);
 }
 
 .footer {
