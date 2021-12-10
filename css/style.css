@@ -3710,6 +3710,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .main-slider__arrow-icon {
+  display: block;
   width: 11px;
   height: 11px;
 }
