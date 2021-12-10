@@ -359,20 +359,45 @@ function accFAQ() {
     for (let i = 0; i < accElems.length; i++) {
         
         accElems[i].addEventListener("click", function() {
-            this.parentElement.classList.toggle("_show");
-            var parent = this.parentElement.parentElement;
-            var panel = this.nextElementSibling;
+            this.parentElement.classList.toggle("_show")
+            var parent = this.parentElement.parentElement
+            var panel = this.nextElementSibling
 
             if (panel.style.maxHeight){
                 console.log('if')
-                panel.style.maxHeight = null;
-            } 
+                panel.style.maxHeight = null
+            }
             else {
-                panel.style.maxHeight = panel.scrollHeight + 25 + "px";
-                parent.style.maxHeight = parseInt(parent.style.maxHeight) + 25 + panel.scrollHeight + "px";
+                const adjacentElems = getSiblings(panel.parentElement)
+                for (let i = 0; i < adjacentElems.length; i++) {
+                    const elem = adjacentElems[i];
+                    const elemPanel = elem.querySelector('.acc-body')
+                    
+                    elem.classList.remove('_show')
+                    elemPanel.style.maxHeight = null
+                }
+                panel.style.maxHeight = panel.scrollHeight + 25 + "px"
+                parent.style.maxHeight = parseInt(parent.style.maxHeight) + 25 + panel.scrollHeight + "px"
             } 
-        });
+        })
     }
+}
+
+function getSiblings(elem) {
+    var siblings = [];
+    var sibling = elem;
+    while (sibling.previousSibling) {
+        sibling = sibling.previousSibling;
+        sibling.nodeType == 1 && siblings.push(sibling);
+    }
+
+    sibling = elem;
+    while (sibling.nextSibling) {
+        sibling = sibling.nextSibling;
+        sibling.nodeType == 1 && siblings.push(sibling);
+    }
+
+    return siblings;
 }
 
 

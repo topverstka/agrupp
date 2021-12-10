@@ -4125,7 +4125,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .rules-section {
-  margin-top: 45px;
+  margin: 45px 0 0 0;
 }
 
 .rules-section__header {
