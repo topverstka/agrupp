@@ -109,7 +109,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 15px 14px 30px;
+    padding: 15px 21px 14px 30px;
 }
 
 .faq-section__card-header-title {
@@ -200,7 +200,7 @@
 
         & .faq-section__card-acc-header-arrow {
 
-            &::after {
+            & span:nth-child(2) {
                 transform: translate(-100%, -50%) rotate(0);
             }
         }
@@ -227,27 +227,27 @@
     position: relative;
     width: 18px;
     height: 18px;
+    display: flex;
 
-    &::before,
-    &::after {
+    & span {
         content: '';
         position: absolute;
         top: 50%;
         left: 50%;
         min-width: 18px;
         width: 18px;
-        height: 1.2px;
+        height: 1px;
         background: $main;
         margin: 0 0 0 12px;
         transition: $tr;
-    }
-    
-    &::before {
-        transform: translate(-100%, -50%);
-    }
 
-    &::after {
-        transform: translate(-100%, -50%) rotate(90deg);
+        &:nth-child(1) {
+            transform: translate(-100%, -50%);
+        }
+
+        &:nth-child(2) {
+            transform: translate(-100%, -50%) rotate(90deg);
+        }
     }
 }
 

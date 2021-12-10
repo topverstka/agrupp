@@ -4361,7 +4361,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 15px 15px 14px 30px;
+  padding: 15px 21px 14px 30px;
 }
 
 .faq-section__card-header-title {
@@ -4419,7 +4419,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding: 0 0 25px 0;
 }
 
-.faq-section__card-acc._show .faq-section__card-acc-header-arrow::after {
+.faq-section__card-acc._show .faq-section__card-acc-header-arrow span:nth-child(2) {
   -webkit-transform: translate(-100%, -50%) rotate(0);
       -ms-transform: translate(-100%, -50%) rotate(0);
           transform: translate(-100%, -50%) rotate(0);
@@ -4454,16 +4454,20 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   position: relative;
   width: 18px;
   height: 18px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.faq-section__card-acc-header-arrow::before, .faq-section__card-acc-header-arrow::after {
+.faq-section__card-acc-header-arrow span {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   min-width: 18px;
   width: 18px;
-  height: 1.2px;
+  height: 1px;
   background: var(--main);
   margin: 0 0 0 12px;
   -webkit-transition: var(--tr);
@@ -4471,13 +4475,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   transition: var(--tr);
 }
 
-.faq-section__card-acc-header-arrow::before {
+.faq-section__card-acc-header-arrow span:nth-child(1) {
   -webkit-transform: translate(-100%, -50%);
       -ms-transform: translate(-100%, -50%);
           transform: translate(-100%, -50%);
 }
 
-.faq-section__card-acc-header-arrow::after {
+.faq-section__card-acc-header-arrow span:nth-child(2) {
   -webkit-transform: translate(-100%, -50%) rotate(90deg);
       -ms-transform: translate(-100%, -50%) rotate(90deg);
           transform: translate(-100%, -50%) rotate(90deg);

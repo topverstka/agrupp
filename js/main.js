@@ -357,7 +357,6 @@ function accFAQ() {
     const accElems = document.querySelectorAll('.acc-header')
 
     for (let i = 0; i < accElems.length; i++) {
-        // const acc = accElems[i];
         
         accElems[i].addEventListener("click", function() {
             this.parentElement.classList.toggle("_show");
@@ -369,8 +368,6 @@ function accFAQ() {
                 panel.style.maxHeight = null;
             } 
             else {
-                // console.log(panel.scrollHeight + "px", parseInt(parent.style.maxHeight) + panel.scrollHeight + "px")
-                // console.log(parent.style.maxHeight, parent)
                 panel.style.maxHeight = panel.scrollHeight + 25 + "px";
                 parent.style.maxHeight = parseInt(parent.style.maxHeight) + 25 + panel.scrollHeight + "px";
             } 
