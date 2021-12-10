@@ -67,50 +67,50 @@ function validationForm() {
 
 // Отправка формы
 // sumbitForm()
-function sumbitForm() {
-    const form = find('.modal__form')
+// function sumbitForm() {
+//     const form = find('.modal__form')
 
-    form.addEventListener('submit', async e => {
-        const modal = find('.modal._show')
-        const btnSend = form.querySelector('[type=submit]')
-        btnSend.classList.add('send-preloader')
+//     form.addEventListener('submit', async e => {
+//         const modal = find('.modal._show')
+//         const btnSend = form.querySelector('[type=submit]')
+//         btnSend.classList.add('send-preloader')
 
-        e.preventDefault()
+//         e.preventDefault()
         
-        let con = validationForm()
+//         let con = validationForm()
 
-        if (con === true) {
-            const formData = new FormData()
-            const action = form.getAttribute('action')
+//         if (con === true) {
+//             const formData = new FormData()
+//             const action = form.getAttribute('action')
     
-            let response = await fetch(action, {
-                method: 'POST',
-                body: formData
-            })
+//             let response = await fetch(action, {
+//                 method: 'POST',
+//                 body: formData
+//             })
             
-            // settimeout здесь для того, чтобы показать работу отправки формы. В дальнейшем это нужно убрать
-            setTimeout(() => {
-                if (response.ok) {
-                    console.log('Successful')
-                    form.reset()
+//             // settimeout здесь для того, чтобы показать работу отправки формы. В дальнейшем это нужно убрать
+//             setTimeout(() => {
+//                 if (response.ok) {
+//                     console.log('Successful')
+//                     form.reset()
     
-                    modal.classList.remove('_show')
-                    find('#send-done').classList.add('_show')
-                    btnSend.classList.remove('send-preloader')
-                }
-                else {
-                    console.log('Error')
-                    form.reset()
+//                     modal.classList.remove('_show')
+//                     find('#send-done').classList.add('_show')
+//                     btnSend.classList.remove('send-preloader')
+//                 }
+//                 else {
+//                     console.log('Error')
+//                     form.reset()
     
-                    modal.classList.remove('_show')
-                    find('#send-error').classList.add('_show')
-                    btnSend.classList.remove('send-preloader')
-                }
-            }, 2000)
+//                     modal.classList.remove('_show')
+//                     find('#send-error').classList.add('_show')
+//                     btnSend.classList.remove('send-preloader')
+//                 }
+//             }, 2000)
 
-        }
-    })
-}
+//         }
+//     })
+// }
 
 // Мобильное меню
 // menu()
@@ -151,21 +151,21 @@ const advantagesSlider = new Swiper('.main-slider__container', {
     },
 });
 
-// Табы в news-section
-if (find('.acc')) tabsComponents()
+// Табы
+if (find('.tab')) tabsComponents()
 function tabsComponents() {
-    const acc = find('.acc')
-    const accHeader = acc.querySelector('.acc-header')
-    const accBody = acc.querySelector('.acc-body')
-    const tabElems = accHeader.querySelectorAll('[data-tab-head]')
-    const totalTabItemElems = accBody.querySelectorAll('[data-tab-item]')
+    const tab = find('.tab')
+    const tabHeader = tab.querySelector('.tab-header')
+    const tabBody = tab.querySelector('.tab-body')
+    const tabElems = tabHeader.querySelectorAll('[data-tab-head]')
+    const totalTabItemElems = tabBody.querySelectorAll('[data-tab-item]')
 
     for (let i = 0; i < tabElems.length; i++) {
         const tab = tabElems[i];
         
         tab.addEventListener('click', () => {
             const dataAttr = tab.dataset.tabHead
-            const tabItemElems = (dataAttr === 'all') ? accBody.querySelectorAll(`[data-tab-item]`) : accBody.querySelectorAll(`[data-tab-item="${dataAttr}"]`)
+            const tabItemElems = (dataAttr === 'all') ? tabBody.querySelectorAll(`[data-tab-item]`) : tabBody.querySelectorAll(`[data-tab-item="${dataAttr}"]`)
 
             removeAll(totalTabItemElems, '_show')
 
@@ -364,7 +364,6 @@ function accFAQ() {
             var panel = this.nextElementSibling
 
             if (panel.style.maxHeight){
-                console.log('if')
                 panel.style.maxHeight = null
             }
             else {
