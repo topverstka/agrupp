@@ -1,5 +1,5 @@
 .faq-section {
-
+    margin-bottom: 30px;
 }
 
 .faq-section__wrap {
@@ -11,17 +11,23 @@
 }
 
 .faq-section__list {
-    position: relative;
+    // position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 400px;
+    // height: 400px;
 }
 
 .faq-section__card {
-    position: absolute;
+    // position: absolute;
     background: #fff;
     border: 1px solid $outline;
     border-radius: 10px;
     transition: $tr;
+
+    &:not(:first-child) {
+        margin: 10px 0 0 0;
+    }
 
     &:hover {
         box-shadow: 0px 9px 25px rgba(52, 58, 74, 0.1);
@@ -30,24 +36,73 @@
         & .faq-section__card-header-title {
             font-weight: 700;
         }
+    }
 
-        & .faq-section__card-header-arrow {
-            background: $accent;
-            border-color: $accent;
+    &._show {
+        box-shadow: 0px 9px 25px rgba(52, 58, 74, 0.1);
+        transform: translate(0, -5px);
+
+        & .faq-section__card-header {
+            background: #E8E9ED;
         }
 
-        & .faq-section__card-header-arrow-icon {
+        & .faq-section__card-header-title {
+            font-weight: 700;
+        }
 
-            & svg path {
-                fill: #fff;
+        & .faq-section__card-header-arrow {
+
+            & .acc-circle {
+                fill: #E8E9ED;
+                // stroke: $accent;
             }
+
+            & .acc-arrow {
+                // fill: #fff;
+                opacity: 0;
+            }
+
+            & .acc-cross {
+                // fill: #fff; 
+                opacity: 1 !important;
+            }
+
+            // &::before {
+            //     width: 14px;
+            //     transform: translate(-50%, 50%) rotate(-45deg);
+            // }
+
+            // &::after {
+            //     width: 14px;
+            //     transform: translate(-50%, 50%) rotate(45deg);
+            // }
         }
     }
 }
 
 // Шапка карточки
 .faq-section__card-header {
+    border-radius: 10px 10px 0 0;
     cursor: pointer;
+
+    &:hover {
+
+        & .faq-section__card-header-arrow {
+
+            & .acc-circle {
+                fill: $accent;
+                stroke: $accent;
+            }
+
+            & .acc-arrow {
+                fill: #fff;
+            }
+
+            & .acc-cross {
+                fill: #fff;
+            }
+        }
+    }
 }
 
 .faq-section__card-header-body {
@@ -65,25 +120,150 @@
 .faq-section__card-header-arrow {
     width: 30px;
     height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid $main;
-    border-radius: 50%;
-    transition: $tr;
+
+    & .acc-circle {
+        transition: $tr;
+    }
+
+    & .acc-arrow {
+        transition: $tr;
+    }
+
+    & .acc-cross {
+        transition: $tr;
+    }
 }
 
 .faq-section__card-header-arrow-icon {
-    width: 11px;
-    height: 11px;
+    position: relative;
+    width: 30px;
+    height: 30px;
 
-    & svg path {
-        transition: $tr;
-    }
+    // &::before,
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 50%;
+    //     width: 70%;
+    //     height: 1px;
+    //     background: $main;
+    // }
+
+    // &::before {
+    //     transform: translate(-50%, calc(100% + 1.5px)) rotate(-45deg) 
+    // }
+
+    // &::after {
+    //     transform: translate(-50%, calc(-100% - 1.5px)) rotate(45deg)
+    // }
+
+    // & svg path {
+    //     transition: $tr;
+    // }
 }
 
 .faq-section__card-body {
     max-height: 0;
     overflow: hidden;
     transition: $tr;
+}
+
+// Аккордеон в аккордеоне
+.faq-section__card-body {
+    
+}
+
+.faq-section__card-acc {
+    position: relative;
+    margin: 0 30px;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $outline;
+        
+        // &::after {
+        //     content: '';
+        //     position: absolute;
+        //     bottom: 0;
+        //     left: 0;
+        //     width: 100%;
+        //     height: 1px;
+        //     background: $outline;
+        // }
+    }
+
+    &._show {
+
+        & .faq-section__card-acc-body {
+            padding: 0 0 25px 0;
+        }
+
+        & .faq-section__card-acc-header-arrow {
+
+            &::after {
+                transform: translate(-100%, -50%) rotate(0);
+            }
+        }
+    }
+}
+
+.faq-section__card-acc-header {
+    padding: 25px 0;
+    cursor: pointer;
+}
+
+.faq-section__card-acc-header-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-section__card-acc-header-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.faq-section__card-acc-header-arrow {
+    position: relative;
+    width: 18px;
+    height: 18px;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 18px;
+        width: 18px;
+        height: 1.2px;
+        background: $main;
+        margin: 0 0 0 12px;
+        transition: $tr;
+    }
+    
+    &::before {
+        transform: translate(-100%, -50%);
+    }
+
+    &::after {
+        transform: translate(-100%, -50%) rotate(90deg);
+    }
+}
+
+.faq-section__card-acc-header-arrow-icon {
+
+}
+
+.faq-section__card-acc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: $tr;
+}
+
+.faq-section__card-acc-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 24px;
+    margin: 20px 0 0 0;
 }

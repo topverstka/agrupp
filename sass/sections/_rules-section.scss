@@ -1,5 +1,5 @@
 .rules-section {
-    margin-top: 50px;
+    margin-top: 45px;
 }
 
 .rules-section__header {
@@ -22,25 +22,8 @@
     &:not(:last-child) {
         border-bottom: 1px solid $outline;
     }
-}
 
-.rules-section__item-link {
-    display: flex;
-    align-items: center;
-    padding: 16px 0;
-}
-
-.rules-section__item-icon {
-    width: 20px;
-    height: 20px;
-}
-
-.rules-section__item-title {
-    margin: 0 0 0 10px;
-}
-
-.rules-section__item-file-size {
-    font-feature-settings: 'pnum' on, 'lnum' on;
-    color: $second;
-    margin: 0 0 0 5px;
+    & .doc-item__link {
+        padding: 16px 0;
+    }
 }

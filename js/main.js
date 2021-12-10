@@ -151,7 +151,7 @@ const advantagesSlider = new Swiper('.main-slider__container', {
     },
 });
 
-// Аккордеон в news-section
+// Табы в news-section
 if (find('.acc')) tabsComponents()
 function tabsComponents() {
     const acc = find('.acc')
@@ -182,75 +182,75 @@ function tabsComponents() {
 }
 
 // Позиционирование карточек в контейнере списка карточек faq
-cardFAQ()
-function cardFAQ() {
-    const container = find('.faq-section__list')
-    const cardElems = findAll('.faq-section__card')
-    let countColumn = 2 // кол-во колонок
-    const gapColumn = 20 // отступ между колонками
-    const gapRow = 10 // отступ между строками
-    const countCard = cardElems.length // кол-во карточек
+// cardFAQ()
+// function cardFAQ() {
+//     const container = find('.faq-section__list')
+//     const cardElems = findAll('.faq-section__card')
+//     let countColumn = 2 // кол-во колонок
+//     const gapColumn = 20 // отступ между колонками
+//     const gapRow = 10 // отступ между строками
+//     const countCard = cardElems.length // кол-во карточек
 
-    if (window.innerWidth < 768) countColumn = 1
-    console.log(window.innerWidth)
-    window.addEventListener('resize', e => {
-        if (window.innerWidth < 768) countColumn = 1
-        widthCardFAQ()
-        positionCardFAQ()
-    })
+//     if (window.innerWidth < 768) countColumn = 1
+//     console.log(window.innerWidth)
+//     window.addEventListener('resize', e => {
+//         if (window.innerWidth < 768) countColumn = 1
+//         widthCardFAQ()
+//         positionCardFAQ()
+//     })
 
-    widthCardFAQ()
-    function widthCardFAQ() {
-        // Ширина карточек
-        const containerWidth = container.offsetWidth
-        const cardWidth = containerWidth / countColumn - gapColumn / 2
+//     widthCardFAQ()
+//     function widthCardFAQ() {
+//         // Ширина карточек
+//         const containerWidth = container.offsetWidth
+//         const cardWidth = containerWidth / countColumn - gapColumn / 2
 
-        for (let i = 0; i < cardElems.length; i++) {
-            const card = cardElems[i];
-            card.style.width = cardWidth + 'px'
-        }
-    }
+//         for (let i = 0; i < cardElems.length; i++) {
+//             const card = cardElems[i];
+//             card.style.width = cardWidth + 'px'
+//         }
+//     }
+
+    // positionCardFAQ()
+    // function positionCardFAQ() {
+    //     // console.log('ok')
+    //     // Позиционирование карточек
+    //     let r = 0 // номер строки, начиная с нуля
     
-    positionCardFAQ()
-    function positionCardFAQ() {
-        // console.log('ok')
-        // Позиционирование карточек
-        let r = 0 // номер строки, начиная с нуля
+    //     for (let i = 0; i < cardElems.length; i++) {
+    //         const card = cardElems[i];
+    //         const cardHeight = card.offsetHeight
+    //         const cardTop = (i === 0 || i === 1) ? 0 : cardHeight + gapRow // Если итерируется первая или вторая карточка, то для них значение top = 0, у остальных cardTop равен высоте одной карточки умноженной на оступ между ними. Далее это значение будет увеличиваться в n-раз в зависимости от того, какая сейчас строка
     
-        for (let i = 0; i < cardElems.length; i++) {
-            const card = cardElems[i];
-            const cardHeight = card.offsetHeight
-            const cardTop = (i === 0 || i === 1) ? 0 : cardHeight + gapRow // Если итерируется первая или вторая карточка, то для них значение top = 0, у остальных cardTop равен высоте одной карточки умноженной на оступ между ними. Далее это значение будет увеличиваться в n-раз в зависимости от того, какая сейчас строка
-    
-            // Если это первая строка
-            if (r === 0) {
-                card.style.top = cardTop + 'px'
-            }
-            // В остальных случаях
-            else {
-                card.style.top = cardTop * r + 'px'
-            }
+    //         // Если это первая строка
+    //         if (r === 0) {
+    //             card.style.top = cardTop + 'px'
+    //         }
+    //         // В остальных случаях
+    //         else {
+    //             card.style.top = cardTop * r + 'px'
+    //         }
             
-            // При итерации каждой второй карточки
-            if ((i+1)%2 === 0) {
-                card.style.right = 0 
-                r++ // увеличивается номер строки на 1
-            }
-        }
-    }
+    //         // При итерации каждой второй карточки
+    //         if ((i+1)%2 === 0) {
+    //             card.style.right = 0 
+    //             r++ // увеличивается номер строки на 1
+    //         }
+    //     }
+    // }
 
     // Размер списка с карточками с частозадаваемыми вопросами
     // container.style.height = countCard / countColumn + 'px'
-}
+// }
 
 // Размер списка с карточками с частозадаваемыми вопросами
-sizeContainerFAQ()
-function sizeContainerFAQ() {
-    const container = find('.faq-section__list')
-    const cardElems = findAll('.faq-section__card')
+// sizeContainerFAQ()
+// function sizeContainerFAQ() {
+//     const container = find('.faq-section__list')
+//     const cardElems = findAll('.faq-section__card')
 
 
-}
+// }
 
 // positionCardFAQ()
 // function positionCardFAQ() {
@@ -306,29 +306,67 @@ function sizeContainerFAQ() {
 // }
 
 // аккордеоны в faq
+// accFAQ()
+// function accFAQ() {
+//     const accElems = findAll('.acc')
+//     // console.log('acc')
+
+//     for (let i = 0; i < accElems.length; i++) {
+//         const acc = accElems[i];
+        
+//         const accHeader = acc.querySelector('.acc-header')
+//         const accBody = acc.querySelector('.acc-body')
+//         const parent = acc
+    
+//         // console.log(accBody.offsetHeight, accBody.clientHeight, accBody.scrollHeight)
+//         // const box = find('#box')
+//         // console.log(box.scrollHeight)
+
+//         accHeader.addEventListener('click', e => {
+            
+//             parent.classList.toggle('_show')
+//             if (parent.classList.contains('_show')) {
+//                 accBody.style.maxHeight = accBody.scrollHeight + 'px'
+                
+//             }
+//             else {
+//                 accBody.style.maxHeight = '0px'
+//             }
+
+//             if (parent.closest('.acc')) {
+//                 const closestAcc = parent.closest('.acc')
+//                 const closestAccBody = closestAcc.querySelector('.acc-body')
+//                 closestAccBody.style.maxHeight = closestAccBody.scrollHeight + 'px'
+//                 console.log(parent.closest('.acc'))
+
+//             }
+//         })
+//     }
+// }
+
 accFAQ()
 function accFAQ() {
-    const accElems = findAll('.acc')
+    const accElems = document.querySelectorAll('.acc-header')
 
     for (let i = 0; i < accElems.length; i++) {
-        const acc = accElems[i];
+        // const acc = accElems[i];
         
-        const accHeader = acc.querySelector('.acc-header')
-        const accBody = acc.querySelector('.acc-body')
-    
-        // console.log(accBody.offsetHeight, accBody.clientHeight, accBody.scrollHeight)
-        const box = find('#box')
-        console.log(box.scrollHeight)
+        accElems[i].addEventListener("click", function() {
+            this.parentElement.classList.toggle("_show");
+            var parent = this.parentElement.parentElement;
+            var panel = this.nextElementSibling;
 
-        box.previousElementSibling.addEventListener('click', e => {
-            box.classList.toggle('_show')
-            if (box.classList.contains('_show')) {
-                box.style.maxHeight = box.scrollHeight + 'px'
-            }
+            if (panel.style.maxHeight){
+                console.log('if')
+                panel.style.maxHeight = null;
+            } 
             else {
-                box.style.maxHeight = '0px'
-            }
-        })
+                // console.log(panel.scrollHeight + "px", parseInt(parent.style.maxHeight) + panel.scrollHeight + "px")
+                // console.log(parent.style.maxHeight, parent)
+                panel.style.maxHeight = panel.scrollHeight + 25 + "px";
+                parent.style.maxHeight = parseInt(parent.style.maxHeight) + 25 + panel.scrollHeight + "px";
+            } 
+        });
     }
 }
 

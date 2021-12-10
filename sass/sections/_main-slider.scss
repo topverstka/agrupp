@@ -7,6 +7,10 @@
     & .main-slider__container {
         height: 180px;
     }
+
+    & .main-slide__text {
+        font-size: 18px;
+    }
 }
 
 .main__wrap {
@@ -41,6 +45,9 @@
     position: absolute;
     top: 50%;
     left: 85px;
+    max-width: 750px;
+    width: 100%;
+    padding: 0 24px 0 0;
     transform: translate(0, -50%);
 }
 

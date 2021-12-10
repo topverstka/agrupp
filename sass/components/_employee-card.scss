@@ -149,6 +149,7 @@
     font-size: 12px;
     font-weight: 500;
     color: $second;
+    margin: 5px 0 0 0;
 }
 
 // Всплывашка
@@ -163,11 +164,23 @@
 
 
 .employee-card__popup-btn {
+    position: relative;
     width: fit-content;
     font-size: 14px;
     font-weight: 500;
     color: $accent;
-    text-decoration: underline;
+    // border-bottom: 1px solid $accent;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        display: block;
+        background: $accent;
+    }
 
     &:hover {
 

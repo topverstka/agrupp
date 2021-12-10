@@ -40,6 +40,24 @@
     & .main-nav__title {
         text-align: left;
         margin: 0 0 0 8px; 
+        white-space: nowrap;
+    }
+
+    & .main-nav__list {
+        overflow-x: auto;
+        padding-bottom: 8px;
+
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #fff;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #AFAFAF;
+        }
     }
 }
 
@@ -118,5 +136,4 @@
     text-align: center;
     margin: 5px 0 0 0;
     transition: $tr;
-    white-space: nowrap;
 }
