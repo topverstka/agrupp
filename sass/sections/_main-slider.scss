@@ -107,6 +107,11 @@
     justify-content: center;
     background: #fff;
     border-radius: 50%;
+    transition: $tr;
+
+    &:hover {
+        // transform: translate(0, -50%) scale(1.1);
+    }
 }
 
 .main-slider__arrow-icon {

@@ -46,9 +46,12 @@
     & .main-nav__list {
         overflow-x: auto;
         padding-bottom: 8px;
+        
+        scrollbar-width: thin;
+        scrollbar-color: #AFAFAF;
 
         &::-webkit-scrollbar {
-            height: 4px;
+            height: 3px;
         }
 
         &::-webkit-scrollbar-track {

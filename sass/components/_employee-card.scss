@@ -334,13 +334,16 @@
     flex-direction: column;
     margin: 15px 0 0 0;
     overflow-y: auto;
+    
+    scrollbar-width: thin;
+    scrollbar-color: #AFAFAF;
 
     &::-webkit-scrollbar {
         width: 3px;
     }
 
     &::-webkit-scrollbar-track {
-        background: #fff;
+        background: #F0F0F0;
     }
 
     &::-webkit-scrollbar-thumb {

@@ -27,9 +27,12 @@
     align-items: center;
     overflow-x: auto;
     padding-bottom: 5px;
+    
+    scrollbar-width: thin;
+    scrollbar-color: #AFAFAF;
 
     &::-webkit-scrollbar {
-        height: 4px;
+        height: 3px;
     }
 
     &::-webkit-scrollbar-track {

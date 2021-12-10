@@ -8,6 +8,7 @@
 
 .footer__elem {
     font-size: 12px;
+    font-feature-settings: 'pnum' off, 'lnum' off;
 
     &:not(:first-child) {
         margin: 0 0 0 20px;
