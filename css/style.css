@@ -3186,6 +3186,44 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   width: 260px;
 }
 
+.employee-card_best._popup-top .employee-card__popup-btn:hover + .employee-card__popup-block {
+  top: -16px;
+  bottom: auto !important;
+}
+
+.employee-card_best._popup-top .employee-card__popup-block {
+  -webkit-transform: translate(0, -100%);
+      -ms-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  top: -20px;
+  bottom: auto !important;
+  -webkit-transition: var(--tr);
+  -o-transition: var(--tr);
+  transition: var(--tr);
+}
+
+.employee-card_best._popup-top .employee-card__popup-block:hover {
+  top: -16px;
+  bottom: auto !important;
+}
+
+.employee-card_best._popup-top .employee-card__popup-block::before {
+  top: auto;
+  bottom: -5px;
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.employee-card_best._popup-top .employee-card__popup-block::after {
+  top: auto;
+  bottom: 0;
+  height: 25px;
+  -webkit-transform: translate(0, 100%);
+      -ms-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+}
+
 .employee-card__body {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4171,20 +4209,26 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   color: var(--accent);
 }
 
-.best-section__year._active .best-section__year-img .cup-border-linear {
-  stop-color: #E30524;
-}
-
 .best-section__year._active .best-section__year-title {
   color: var(--accent);
   font-weight: 600;
 }
 
+.best-section__year._active .best-section__year-img {
+  background: url(../img/awards/cup-active.png) no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center center;
+}
+
 .best-section__year-img {
   position: relative;
   width: 100%;
-  height: 100%;
-  background: #FFF7E3;
+  height: 78px;
+  background: url(../img/awards/cup.png) no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center center;
   -webkit-border-radius: 50%;
           border-radius: 50%;
 }

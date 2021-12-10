@@ -176,6 +176,14 @@ function tabsComponents() {
                 const tabItem = tabItemElems[i];
                     
                 tabItem.classList.add('_show')
+
+                if (tabItem.classList.contains('employee-card_best')) {
+                    const numCards = tabItemElems.length - 3
+
+                    if (i >= numCards) {
+                        tabItem.classList.add('_popup-top')
+                    }
+                }
             }
         })
     }

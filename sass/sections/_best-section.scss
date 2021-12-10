@@ -23,9 +23,6 @@
 }
 
 .best-section__year-list {
-    // display: grid;
-    // grid-template-columns: repeat(10, 1fr);
-    // column-gap: 21px;
     display: flex;
     align-items: center;
     overflow-x: auto;
@@ -66,42 +63,15 @@
     
     &._active {
 
-        & .best-section__year-img {
-            // border: 10px solid #fff;
-            // border-image: linear-gradient(to right top, blue, skyblue, blue);
-            // border-image-slice: 1; 
-            // border-radius: 50%;
-            // overflow: hidden;
-
-            & .cup-border-linear {
-                stop-color: #E30524;
-            }
-            
-            &::before {
-                // content: "";
-                // position: absolute;
-                // top: 0;
-                // // bottom: 0;
-                // left: 0;
-                // // right: 0;
-                // width: 100%;
-                // height: 100%;
-                // background: linear-gradient(35deg, red, green);
-                // border-radius: 50%;
-                // z-index: -1;
-                // border: 10px solid #fff;
-                // border-image: linear-gradient(to right top, blue, skyblue, blue);
-                // border-image-slice: 1; 
-                // border-radius: 50%;
-                // overflow: hidden;
-
-                // background: linear-gradient(135deg, #E30524 24.23%, #FFBAC4 49.09%, #E30524 74.62%);
-            }
-        }
-
         & .best-section__year-title {
             color: $accent;
             font-weight: 600;
+        }
+
+        & .best-section__year-img {
+            background: url(../img/awards/cup-active.png) no-repeat;
+            background-size: cover;
+            background-position: center center;
         }
     }
 }
@@ -109,25 +79,11 @@
 .best-section__year-img {
     position: relative;
     width: 100%;
-    height: 100%;
-    // width: 70px;
-    // height: 70px;
-    background: #FFF7E3;
+    height: 78px;
+    background: url(../img/awards/cup.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
     border-radius: 50%; 
-
-    // &::before {
-    //     content: '';
-    //     position: absolute;
-    //     z-index: -1;
-    //     top: 50%;
-    //     left: 50%;
-    //     width: 74px;
-    //     height: 74px;
-    //     transform: translate(-50%, -50%) scale(1.1);
-    //     background: linear-gradient(129.75deg, #A89142 14.73%, #FFFAD3 50.61%, #A89142 84.43%);
-    //     border-radius: 50%;
-    //     transition: $tr;
-    // }
 }
  
 .best-section__year-title {

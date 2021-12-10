@@ -20,46 +20,48 @@
     }
 
     // Появление всплывашки сверху у последних 3 карточек
-    // &._show:nth-last-of-type(-n+3) {
-    // // &._show:nth-child(-n+3) {
+    // &._show {
     //     background: #000;
-
-    //     & .employee-card__popup-btn {
-    
-    //         &:hover {
-            
-    //             & + .employee-card__popup-block {
-    //                 top: -16px;
-    //                 bottom: auto !important;
-    //             }
-    //         }
-    //     }
-
-    //     & .employee-card__popup-block {
-    //         transform: translate(0, -100%);
-    //         top: -20px;
-    //         bottom: auto !important;
-    //         transition: $tr;
-
-    //         &:hover {
-    //             top: -16px;
-    //             bottom: auto !important;
-    //         }
-
-    //         &::before {
-    //             top: auto;
-    //             bottom: -5px;
-    //             transform: rotate(135deg);
-    //         }
-
-    //         &::after {
-    //             top: auto;
-    //             bottom: 0;
-    //             height: 25px;
-    //             transform: translate(0, 100%);
-    //         }
-    //     }
     // }
+
+    &._popup-top {
+
+        & .employee-card__popup-btn {
+    
+            &:hover {
+            
+                & + .employee-card__popup-block {
+                    top: -16px;
+                    bottom: auto !important;
+                }
+            }
+        }
+
+        & .employee-card__popup-block {
+            transform: translate(0, -100%);
+            top: -20px;
+            bottom: auto !important;
+            transition: $tr;
+
+            &:hover {
+                top: -16px;
+                bottom: auto !important;
+            }
+
+            &::before {
+                top: auto;
+                bottom: -5px;
+                transform: rotate(135deg);
+            }
+
+            &::after {
+                top: auto;
+                bottom: 0;
+                height: 25px;
+                transform: translate(0, 100%);
+            }
+        }
+    }
 }
 
 .employee-card__body {
