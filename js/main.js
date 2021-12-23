@@ -42,28 +42,28 @@ function bodyLock(con) {
 }
 
 // Валидация формы
-function validationForm() {
-    const name = find('#user_name')
-    const phone = find('#user_phone')
-    const email = find('#user_email')
+// function validationForm() {
+//     const name = find('#user_name')
+//     const phone = find('#user_phone')
+//     const email = find('#user_email')
 
-    let con = true
+//     let con = true
 
-    for (let i = 0; i < [name, phone, email].length; i++) {
-        const elem = [name, phone, email][i];
-        const elemValue = elem.value.trim()
+//     for (let i = 0; i < [name, phone, email].length; i++) {
+//         const elem = [name, phone, email][i];
+//         const elemValue = elem.value.trim()
 
-        if (elemValue === '') {
-            elem.classList.add('_error')
-            con = false
-        } else {
-            elem.classList.remove('_error')
-            con = true
-        }
-    }
+//         if (elemValue === '') {
+//             elem.classList.add('_error')
+//             con = false
+//         } else {
+//             elem.classList.remove('_error')
+//             con = true
+//         }
+//     }
 
-    return con
-}
+//     return con
+// }
 
 // Отправка формы
 // sumbitForm()
@@ -382,6 +382,7 @@ function accFAQ() {
     }
 }
 
+// Получаем все соседние элементы
 function getSiblings(elem) {
     var siblings = [];
     var sibling = elem;
@@ -417,7 +418,28 @@ function modal() {
             }
         }
     }
-    
+
+    // Проверка изменения хеша в адресной строке и открытие модалки с id равным этому хешу
+    checkHash()
+    function checkHash() {
+        window.addEventListener("hashchange", e => {
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1)
+                const modal = document.querySelector(`.modal#${hash}`)
+        
+                if (modal) {
+                    if (find('.modal._show')) find('.modal._show').classList.remove('_show')
+                    modal.classList.add('_show');
+                    bodyLock(true)
+                    closeWhenClickingOnBg(`#${hash} .modal__content`, modal);
+                }
+            }
+            else {
+                if (find('.modal._show')) find('.modal._show').classList.remove('_show')
+            }
+        });
+    }
+
     // Закрытие модальных окон при клике по крестику
     closeModalWhenClickingOnCross()
     function closeModalWhenClickingOnCross() {
@@ -433,7 +455,7 @@ function modal() {
             })
         }
     }
-    
+
     // Закрытие модальных окон при нажатии по клавише ESC
     closeModalWhenClickingOnESC()
     function closeModalWhenClickingOnESC() {
@@ -450,14 +472,14 @@ function modal() {
             })
         }
     }
-    
+
     // Сброс id модального окна в url
     function resetHash() {
         const windowTop = window.pageYOffset
         window.location.hash = ''
         window.scrollTo(0, windowTop)
     }
-    
+
     // Открытие модальных окон
     openModal()
     function openModal() {
@@ -478,30 +500,30 @@ function modal() {
             });
         }
     }
-    
+
     // Закрытие модального окна при клике по заднему фону
     function closeWhenClickingOnBg(itemArray, itemParent, classShow = '_show') {
         document.addEventListener('click', (e) => {
             let itemElems = document.querySelectorAll(itemArray)
-    
+
             for (let i = 0; i < itemElems.length; i++) {
                 const item = itemElems[i];
-    
+
                 const target = e.target,
                     itsItem = target == item || item.contains(target),
                     itemIsShow = item.classList.contains(classShow);
-    
+
                 if (itemParent) {
                     const itsItemParent = target == itemParent || itemParent.contains(target),
                         itemParentIsShow = itemParent.classList.contains(classShow);
-    
+
                     if (!itsItem && itsItemParent && itemParentIsShow) {
                         itemParent.classList.remove(classShow);
-    
+
                         if (body.classList.contains('_lock')) {
                             bodyLock(false)
                         }
-    
+
                         if (window.location.hash === '#' + itemParent.getAttribute('id')) {
                             resetHash()
                         }
@@ -512,13 +534,12 @@ function modal() {
                         if (body.classList.contains('_lock')) {
                             bodyLock(false)
                         }
-    
+
                         if (window.location.hash === '#' + itemParent.getAttribute('id')) {
                             resetHash()
                         }
                     }
                 }
-    
             }
         })
     }
