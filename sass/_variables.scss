@@ -2,7 +2,7 @@
 :root {
     --ffMain: 'Raleway', sans-serif;
     --ffSecond: 'Roboto', sans-serif;
-    --tr: .3s;  // Плавность перехода
+    --tr: .3s; // Плавность перехода
     --radius: 16px; // border-radius
 }
 
@@ -12,20 +12,20 @@ $tr: var(--tr);
 $minHover: 769px; // Минимальное разрешения экрана для hover-эффекта
 $container: 1012px;
 $radius: var(--radius);
-
 $laptop-l: 1440px;
 $laptop: 1024px;
 $tablet: 768px;
 $mobile-l: 425px;
 $mobile-m: 375px;
 $mobile-s: 320px;
-
 // Цвета
 :root {
     --main: #333333;
     --second: #717171;
     --accent: #E30524;
     --accent-hover: #E30524;
+    --background-hover: #FEF7F8;
+    --color-view: #9D9D9D;
     // --accent-active: #37866E;
     // --accent2: #DC8B2D;
     // --accent2-active: #C27B29;
@@ -39,6 +39,8 @@ $main: var(--main);
 $second: var(--second);
 $accent: var(--accent);
 $accent-hover: var(--accent-hover);
+$background-hover: var(--background-hover);
+$color-view: var(--color-view);
 // $accent-active: var(--accent-active);
 // $accent2: var(--accent2);
 // $accent2-active: var(--accent2-active);

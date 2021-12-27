@@ -2,13 +2,9 @@
     margin-bottom: 30px;
 }
 
-.faq-section__wrap {
+.faq-section__wrap {}
 
-}
-
-.faq-section__body {
-
-}
+.faq-section__body {}
 
 .faq-section__list {
     // position: relative;
@@ -24,54 +20,42 @@
     border: 1px solid $outline;
     border-radius: 10px;
     transition: $tr;
-
     &:not(:first-child) {
         margin: 10px 0 0 0;
     }
-
     &:hover {
         box-shadow: 0px 9px 25px rgba(52, 58, 74, 0.1);
         transform: translate(0, -5px);
-
         & .faq-section__card-header-title {
             font-weight: 700;
         }
     }
-
     &._show {
         box-shadow: 0px 9px 25px rgba(52, 58, 74, 0.1);
         transform: translate(0, -5px);
-
         & .faq-section__card-header {
             background: #E8E9ED;
         }
-
         & .faq-section__card-header-title {
             font-weight: 700;
         }
-
         & .faq-section__card-header-arrow {
-
             & .acc-circle {
                 fill: #E8E9ED;
                 // stroke: $accent;
             }
-
             & .acc-arrow {
                 // fill: #fff;
                 opacity: 0;
             }
-
             & .acc-cross {
                 // fill: #fff; 
                 opacity: 1 !important;
             }
-
             // &::before {
             //     width: 14px;
             //     transform: translate(-50%, 50%) rotate(-45deg);
             // }
-
             // &::after {
             //     width: 14px;
             //     transform: translate(-50%, 50%) rotate(45deg);
@@ -84,20 +68,15 @@
 .faq-section__card-header {
     border-radius: 10px 10px 0 0;
     cursor: pointer;
-
     &:hover {
-
         & .faq-section__card-header-arrow {
-
             & .acc-circle {
                 fill: $accent;
                 stroke: $accent;
             }
-
             & .acc-arrow {
                 fill: #fff;
             }
-
             & .acc-cross {
                 fill: #fff;
             }
@@ -120,15 +99,12 @@
 .faq-section__card-header-arrow {
     width: 30px;
     height: 30px;
-
     & .acc-circle {
         transition: $tr;
     }
-
     & .acc-arrow {
         transition: $tr;
     }
-
     & .acc-cross {
         transition: $tr;
     }
@@ -138,7 +114,6 @@
     position: relative;
     width: 30px;
     height: 30px;
-
     // &::before,
     // &::after {
     //     content: '';
@@ -149,15 +124,12 @@
     //     height: 1px;
     //     background: $main;
     // }
-
     // &::before {
     //     transform: translate(-50%, calc(100% + 1.5px)) rotate(-45deg) 
     // }
-
     // &::after {
     //     transform: translate(-50%, calc(-100% - 1.5px)) rotate(45deg)
     // }
-
     // & svg path {
     //     transition: $tr;
     // }
@@ -170,17 +142,13 @@
 }
 
 // Аккордеон в аккордеоне
-.faq-section__card-body {
-    
-}
+.faq-section__card-body {}
 
 .faq-section__card-acc {
     position: relative;
     margin: 0 30px;
-
     &:not(:last-child) {
         border-bottom: 1px solid $outline;
-        
         // &::after {
         //     content: '';
         //     position: absolute;
@@ -191,18 +159,103 @@
         //     background: $outline;
         // }
     }
-
     &._show {
-
         & .faq-section__card-acc-body {
             padding: 0 0 25px 0;
         }
-
         & .faq-section__card-acc-header-arrow {
-
             & span:nth-child(2) {
                 transform: translate(-100%, -50%) rotate(0);
             }
+        }
+    }
+}
+
+.faq-section__card-acc-column {
+    display: flex;
+    align-items: flex-start;
+    &-list {
+        font-size: 14px;
+        line-height: 22px;
+        color: ($main);
+        font-weight: 500;
+        border-right: 1px solid #F1F1F1;
+        margin-right: 24px;
+        width: 685px;
+        & li:first-child {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        & li:not(:first-child) {
+            margin-left: 10px;
+            list-style: inside;
+        }
+    }
+    & button {
+        background: $accent;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 14px;
+        color: $bg-page;
+        padding: 9px 30px;
+        margin-top: 10px;
+    }
+}
+
+.faq-section__card-acc-persChanges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 20px;
+    margin: 25px 0;
+    &-title {
+        font-weight: 600;
+        font-size: 18px;
+        color: $main;
+        margin-bottom: 20px;
+    }
+    & .persChanges-box {
+        height: 352px;
+        overflow-y: scroll;
+        padding-right: 5px;
+        & li {
+            display: flex;
+            align-items: center;
+            padding: 9px 20px;
+            border: 1px solid #F4F4F4;
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            img {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 17px
+            }
+            p:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+        &__title {
+            font-size: 13px;
+            font-weight: bold;
+            color: $main;
+        }
+        &__vakansion,
+        &__date {
+            font-size: 12px;
+            color: $second;
+            font-weight: 500;
+        }
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $outline;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $main;
+            border-radius: 5px;
         }
     }
 }
@@ -228,7 +281,6 @@
     width: 18px;
     height: 18px;
     display: flex;
-
     & span {
         content: '';
         position: absolute;
@@ -240,20 +292,16 @@
         background: $main;
         margin: 0 0 0 12px;
         transition: $tr;
-
         &:nth-child(1) {
             transform: translate(-100%, -50%);
         }
-
         &:nth-child(2) {
             transform: translate(-100%, -50%) rotate(90deg);
         }
     }
 }
 
-.faq-section__card-acc-header-arrow-icon {
-
-}
+.faq-section__card-acc-header-arrow-icon {}
 
 .faq-section__card-acc-body {
     max-height: 0;
@@ -266,4 +314,42 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 15px 24px;
     margin: 20px 0 0 0;
+}
+
+.faq-section__card-acc-textInterview {
+    margin: 25px 0;
+    & p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+        color: $main;
+        margin-bottom: 25px;
+    }
+    & iframe {
+        width: 472px;
+        height: 266px;
+        border-radius: 10px;
+    }
+    &-sounds {
+        width: 306px;
+        height: 72px;
+    }
+}
+
+.faq-section {
+    & .container>h2 {
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 33px;
+        margin-bottom: 30px;
+    }
+}
+
+.faq-section__show {
+    border-radius: 5px;
+    border: 1px solid $second;
+    padding: 9px 30px;
+    text-align: center;
+    margin: 30px auto 0;
+    display: block
 }
