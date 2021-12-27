@@ -2205,7 +2205,7 @@ body._lock {
   border-radius: 10px;
 }
 
-.photo-section__wrapper-listPhoto-main p {
+.photo-section__wrapper-listPhoto-main h2 {
   position: absolute;
   top: 0;
   left: 0;
