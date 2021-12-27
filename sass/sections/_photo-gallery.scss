@@ -59,7 +59,7 @@
         background: #fff;
         padding: 5px 0 5px 25px;
         margin-right: 20px;
-        li:not(:last-child):after {
+        & li:not(:last-child):after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -69,7 +69,7 @@
             width: 200px;
             background: #F4F4F4
         }
-        li {
+        & li {
             font-weight: 600;
             font-size: 18px;
             line-height: 21px;
@@ -78,7 +78,7 @@
             position: relative;
             cursor: pointer;
         }
-        li.active {
+        & li.active {
             color: $accent;
         }
     }
@@ -107,13 +107,13 @@
     &-main {
         position: relative;
         margin-right: 20px;
-        img {
+        & img {
             width: 160px;
             height: 172px;
             object-fit: cover;
             border-radius: 10px;
         }
-        p {
+        & h2 {
             position: absolute;
             top: 0;
             left: 0;
@@ -143,7 +143,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 20px;
-        img {
+        & img {
             border-radius: 10px;
             width: 101px;
             height: 76px;
