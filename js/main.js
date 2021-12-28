@@ -572,10 +572,10 @@ document.querySelectorAll('.photo-section__wrapper-menu li').forEach(i => {
             el.classList.remove('active');
         });
         i.classList.add('active');
-        document.querySelectorAll('.photo-section__wrapper.active .photo-section__wrapper-listPhoto').forEach(el => {
+        document.querySelectorAll('.photo-section__wrapper.active .photo-section__wrapper-list_photo').forEach(el => {
             el.classList.remove('active');
         });
-        document.querySelector(`.photo-section__wrapper.active .photo-section__wrapper-listPhoto[data-photo="${i.getAttribute("data-photo")}"]`).classList.add('active');
+        document.querySelector(`.photo-section__wrapper.active .photo-section__wrapper-list_photo[data-photo="${i.getAttribute("data-photo")}"]`).classList.add('active');
     });
 });
 
@@ -591,6 +591,14 @@ document.querySelectorAll('.photo-section__slider .swiper-slide').forEach(i => {
 
 
 // Страница фотогалерея, переключение вкладок //
+
+
+document.querySelectorAll('.lightgallery').forEach(i => {
+    lightGallery(i, {
+        thumbnail: true,
+    });
+});
+
 
 
 
