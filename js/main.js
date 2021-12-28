@@ -600,6 +600,20 @@ document.querySelectorAll('.lightgallery').forEach(i => {
 });
 
 
+let textarea_deligation = document.querySelector('.professional-view');
+if (textarea_deligation) {
+    textarea_deligation.addEventListener('input', function(e) {
+        if (this.getElementsByTagName('textarea')) {
+            if (e.target.value === '') {
+                e.target.style = null;
+            } else {
+                e.target.style.height = e.target.scrollHeight + "px";
+            }
+        }
+    });
+}
+
+
 
 
 let previous = document.querySelector('.sounds__pre');
