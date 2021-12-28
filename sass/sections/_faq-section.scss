@@ -318,7 +318,7 @@
 
 .faq-section__card-acc-textInterview {
     margin: 25px 0;
-    & p {
+    &>p {
         font-weight: 500;
         font-size: 14px;
         line-height: 22px;
