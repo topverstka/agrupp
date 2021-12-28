@@ -2711,7 +2711,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .faq-section {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .faq-section__list {
@@ -3201,7 +3201,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   border-radius: 10px;
   border: 1px solid #F4F4F4;
   background: #fff;
-  padding: 5px 0 5px 25px;
+  padding: 8px 8px 8px 22px;
   margin-right: 20px;
 }
 
@@ -3702,6 +3702,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .professional-view__element-info-text {
   margin-top: 20px;
   padding-left: 53px;
+  padding-right: 46px;
 }
 
 .professional-view__element-info-text > h3 {
@@ -3721,7 +3722,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .professional-view__element-info-text img {
   width: 320px;
-  height: 320px;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: -15px;
@@ -3824,7 +3825,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   height: 72px;
   border-radius: 10px;
   background: #FBFBFB;
-  padding: 20px;
+  padding: 0 20px;
   border: 1px solid #DEDEDE;
 }
 
@@ -3840,13 +3841,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .sounds_section__top button {
   background: #62B1E3;
   border-radius: 50%;
-  padding: 13px;
+  padding: 0 13px;
   width: 40px;
   height: 40px;
 }
 
 .sounds_section__top button img {
-  width: 16px;
+  width: 13px;
 }
 
 .sounds_section input[type="range"] {
