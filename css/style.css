@@ -3080,6 +3080,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   border: 1px solid var(--second);
   padding: 9px 30px;
   text-align: center;
+  font-size: 14px;
   margin: 30px auto 0;
   display: block;
 }
