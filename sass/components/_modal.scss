@@ -1,6 +1,6 @@
 .modal {
     position: fixed;
-    z-index: 1;
+    z-index: 9;
     top: 0;
     left: 0;
     width: 100%;
@@ -10,12 +10,10 @@
     visibility: hidden;
     opacity: 0;
     transition: $tr;
-
     &._show {
         visibility: visible;
         opacity: 1;
         overflow-y: auto;
-
         & .modal__body {
             transform: translate(0, 0);
         }
@@ -30,18 +28,18 @@
     align-items: center;
     padding: 30px 16px;
     transition: $tr;
-
     & h2 {
-        margin: 0 0 8px 0;
+        margin: 0 0 52px 0;
     }
 }
 
 .modal__content {
     position: relative;
-    max-width: 540px;
+    max-width: 582px;
+    width: 100%;
     background: #fff;
     border-radius: $radius;
-    padding: 40px 40px 32px 40px;
+    padding: 50px 65px 50px 65px;
 }
 
 .modal__big-icon {
@@ -51,9 +49,10 @@
 }
 
 .modal__title {
-    font-size: 32px;
-    font-weight: 900;
+    font-size: 28px;
+    font-weight: bold;
     text-align: center;
+    color: $main
 }
 
 .modal__form {
@@ -68,29 +67,29 @@
 }
 
 .modal__submit {
-    margin: 15px 0 0 0;
+    margin: 25px 0 0 0;
+    &.btn {
+        padding: 9px 30px
+    }
 }
 
 .modal__close {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 31px;
+    right: 31px;
     width: 24px;
     height: 24px;
-
     & span {
         position: absolute;
         top: 50%;
         left: 50%;
         width: 20px;
-        height: 2px;
-        background: $main;
+        height: 1px;
+        background: $second;
         border-radius: 100px;
-
         &:nth-child(1) {
             transform: translate(-50%, -50%) rotate(45deg);
         }
-
         &:nth-child(2) {
             transform: translate(-50%, -50%) rotate(-45deg);
         }
