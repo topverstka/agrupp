@@ -1627,7 +1627,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   max-width: 582px;
   width: 100%;
   background: #fff;
-  border-radius: var(--radius);
+  border-radius: 10px;
   padding: 50px 65px 50px 65px;
 }
 
@@ -3336,8 +3336,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .greeting-blog__photo img {
-  width: 177px;
-  height: 177px;
+  width: 184px;
+  height: 184px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 30px;
@@ -3432,6 +3432,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding: 15px 30px;
   -webkit-transition: var(--tr);
   transition: var(--tr);
+  height: 127px;
 }
 
 .new-appeal__block:hover {
