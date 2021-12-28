@@ -1665,8 +1665,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .modal__close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 31px;
+  right: 31px;
   width: 24px;
   height: 24px;
 }
