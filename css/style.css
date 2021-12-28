@@ -3800,6 +3800,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   border-radius: 10px;
   background: #FBFBFB;
   padding: 20px;
+  border: 1px solid #DEDEDE;
 }
 
 .sounds_section__top {
