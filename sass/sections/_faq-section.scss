@@ -198,11 +198,10 @@
         font-size: 14px;
         color: $bg-page;
         padding: 9px 30px;
-        margin-top: 10px;
     }
 }
 
-.faq-section__card-acc-persChanges {
+.faq-section__card-acc-pers_changes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0 20px;
@@ -213,7 +212,7 @@
         color: $main;
         margin-bottom: 20px;
     }
-    & .persChanges-box {
+    & .pers_changes-box {
         height: 352px;
         overflow-y: scroll;
         padding-right: 5px;
@@ -316,7 +315,7 @@
     margin: 20px 0 0 0;
 }
 
-.faq-section__card-acc-textInterview {
+.faq-section__card-acc-text_interview {
     margin: 25px 0;
     &>p {
         font-weight: 500;
