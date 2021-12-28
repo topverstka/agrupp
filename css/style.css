@@ -3533,26 +3533,27 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   top: 6px;
 }
 
-.professional-view__admin_element input {
+.professional-view__admin_element textarea {
   width: 100%;
+  resize: inherit;
 }
 
-.professional-view__admin_element input::-webkit-input-placeholder {
+.professional-view__admin_element textarea::-webkit-input-placeholder {
   color: var(--color-view);
   font-size: 16px;
 }
 
-.professional-view__admin_element input:-ms-input-placeholder {
+.professional-view__admin_element textarea:-ms-input-placeholder {
   color: var(--color-view);
   font-size: 16px;
 }
 
-.professional-view__admin_element input::-ms-input-placeholder {
+.professional-view__admin_element textarea::-ms-input-placeholder {
   color: var(--color-view);
   font-size: 16px;
 }
 
-.professional-view__admin_element input::placeholder {
+.professional-view__admin_element textarea::placeholder {
   color: var(--color-view);
   font-size: 16px;
 }
@@ -3761,26 +3762,29 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   margin-right: 7px;
 }
 
-.professional-view__element-info-comments-bottom input {
+.professional-view__element-info-comments-bottom textarea {
   width: 70%;
   border-radius: 20px;
   border: 1px solid #E1E2E3;
   padding: 8px 19px 8px;
+  height: 34px;
+  resize: inherit;
+  overflow: hidden;
 }
 
-.professional-view__element-info-comments-bottom input::-webkit-input-placeholder {
+.professional-view__element-info-comments-bottom textarea::-webkit-input-placeholder {
   color: var(--color-view);
 }
 
-.professional-view__element-info-comments-bottom input:-ms-input-placeholder {
+.professional-view__element-info-comments-bottom textarea:-ms-input-placeholder {
   color: var(--color-view);
 }
 
-.professional-view__element-info-comments-bottom input::-ms-input-placeholder {
+.professional-view__element-info-comments-bottom textarea::-ms-input-placeholder {
   color: var(--color-view);
 }
 
-.professional-view__element-info-comments-bottom input::placeholder {
+.professional-view__element-info-comments-bottom textarea::placeholder {
   color: var(--color-view);
 }
 
