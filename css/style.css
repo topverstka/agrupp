@@ -3078,11 +3078,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .faq-section__show {
   border-radius: 5px;
   border: 1px solid var(--second);
-  padding: 9px 30px;
+  width: 153px;
+  height: 34px;
   text-align: center;
   font-size: 14px;
   margin: 30px auto 0;
   display: block;
+}
+
+.faq-section__show:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: none;
 }
 
 .footer {
@@ -3341,7 +3348,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   height: 184px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-bottom: 30px;
+  margin-bottom: 23px;
   border-radius: 50%;
   border: 1px solid var(--outline);
   padding: 7px;
@@ -3722,7 +3729,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .professional-view__element-info-comments {
   padding-left: 53px;
-  margin-top: 40px;
+  margin-top: 25px;
 }
 
 .professional-view__element-info-comments .professional-view__element-info-counter {
@@ -3745,6 +3752,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   color: var(--color-view);
   font-weight: 600;
   cursor: pointer;
+}
+
+.professional-view__element-info-comments-top button:hover {
+  color: var(--accent);
 }
 
 .professional-view__element-info-comments-top p {
