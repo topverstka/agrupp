@@ -728,40 +728,40 @@ function pausesong() {
 
 
 // next song
-function next_song() {
-    if (index_no < All_song.length - 1) {
-        index_no += 1;
-        load_track(index_no);
-        playsong();
-    } else {
-        index_no = 0;
-        load_track(index_no);
-        playsong();
+// function next_song() {
+//     if (index_no < All_song.length - 1) {
+//         index_no += 1;
+//         load_track(index_no);
+//         playsong();
+//     } else {
+//         index_no = 0;
+//         load_track(index_no);
+//         playsong();
 
-    }
-}
+//     }
+// }
 
 
-// previous song
-function previous_song() {
-    if (index_no > 0) {
-        index_no -= 1;
-        load_track(index_no);
-        playsong();
+// // previous song
+// function previous_song() {
+//     if (index_no > 0) {
+//         index_no -= 1;
+//         load_track(index_no);
+//         playsong();
 
-    } else {
-        index_no = All_song.length;
-        load_track(index_no);
-        playsong();
-    }
-}
+//     } else {
+//         index_no = All_song.length;
+//         load_track(index_no);
+//         playsong();
+//     }
+// }
 
 
 // change volume
-function volume_change() {
-    volume_show.innerHTML = recent_volume.value;
-    track.volume = recent_volume.value / 100;
-}
+// function volume_change() {
+//     volume_show.innerHTML = recent_volume.value;
+//     track.volume = recent_volume.value / 100;
+// }
 
 // change slider position 
 function change_duration() {
@@ -770,15 +770,15 @@ function change_duration() {
 }
 
 // autoplay function
-function autoplay_switch() {
-    if (autoplay == 1) {
-        autoplay = 0;
-        auto_play.style.background = "rgba(255,255,255,0.2)";
-    } else {
-        autoplay = 1;
-        auto_play.style.background = "#FF8A65";
-    }
-}
+// function autoplay_switch() {
+//     if (autoplay == 1) {
+//         autoplay = 0;
+//         auto_play.style.background = "rgba(255,255,255,0.2)";
+//     } else {
+//         autoplay = 1;
+//         auto_play.style.background = "#FF8A65";
+//     }
+// }
 
 
 function range_slider() {
