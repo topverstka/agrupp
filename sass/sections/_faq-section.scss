@@ -1,5 +1,5 @@
 .faq-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .faq-section__wrap {}
@@ -347,8 +347,15 @@
 .faq-section__show {
     border-radius: 5px;
     border: 1px solid $second;
-    padding: 9px 30px;
+    width: 153px;
+    height: 34px;
     text-align: center;
+    font-size: 14px;
     margin: 30px auto 0;
-    display: block
+    display: block;
+    &:hover {
+        color: var(--accent);
+        border-color: var(--accent);
+        background: none;
+    }
 }
