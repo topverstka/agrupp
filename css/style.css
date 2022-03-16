@@ -2257,16 +2257,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   right: 10px;
 }
 
-#modal-birthdays .block-border.big-list .employee-card:nth-last-child(-n+2) .employee-card__popup-block {
+#modal-birthdays .block-border.big-list .employee-card:nth-child(n+5) .employee-card__popup-block {
   bottom: 138px;
 }
 
-#modal-birthdays .block-border.big-list .employee-card:nth-last-child(-n+2) .employee-card__popup-block:before {
+#modal-birthdays .block-border.big-list .employee-card:nth-child(n+5) .employee-card__popup-block:before {
   top: auto;
   bottom: -5px;
 }
 
-#modal-birthdays .block-border.big-list .employee-card:nth-last-child(-n+2) .employee-card__popup-block:after {
+#modal-birthdays .block-border.big-list .employee-card:nth-child(n+5) .employee-card__popup-block:after {
   bottom: 0;
   top: auto;
   -webkit-transform: translate(0, 100%);

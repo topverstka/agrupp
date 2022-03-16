@@ -103,7 +103,7 @@
                         right: 10px
                     }
                 }
-                &:nth-last-child(-n+2) .employee-card__popup-block {
+                &:nth-child(n+5) .employee-card__popup-block {
                     bottom: 138px;
                     &:before {
                         top: auto;
