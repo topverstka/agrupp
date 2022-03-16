@@ -1,5 +1,4 @@
 .main_small {
-
     & .main-nav__item {
         flex-direction: row;
         align-items: center;
@@ -7,57 +6,45 @@
         border: 1px solid $outline;
         border-radius: 10px;
         padding: 15px 5px;
-
         &:hover {
-            background: $accent;
-    
+            // background: $accent;
             & .main-nav__icon-block {
                 background: none;
             }
-    
             & .main-nav__title {
                 color: #fff;
             }
         }
-
-        &._active {
-            border-color: $accent;
-        }
+        // &._active {
+        //     border-color: $accent;
+        // }
     }
-
     & .main-nav__icon-block {
         width: 20px;
         height: 20px;
         border: none;
         border-radius: 0;
     }
-
     & .main-nav__icon {
         width: 20px;
         height: 20px;
     }
-
     & .main-nav__title {
         text-align: left;
-        margin: 0 0 0 8px; 
+        margin: 0 0 0 8px;
         white-space: nowrap;
     }
-
     & .main-nav__list {
         overflow-x: auto;
         padding-bottom: 8px;
-        
         scrollbar-width: thin;
         scrollbar-color: #AFAFAF;
-
         &::-webkit-scrollbar {
             height: 3px;
         }
-
         &::-webkit-scrollbar-track {
             background: #fff;
         }
-
         &::-webkit-scrollbar-thumb {
             background-color: #AFAFAF;
         }
@@ -70,7 +57,7 @@
 
 .main-nav__list {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     column-gap: 20px;
 }
 
@@ -78,39 +65,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    &:hover {
-
-        & .main-nav__icon-block {
-            background-color: $accent;
-            border-color: $accent;
-        }
-
-        & .main-nav__icon {
-
-            & svg path {
-                fill: #fff !important;
-            }
-        }
-
-        & .main-nav__title {
-            color: $accent;
-        }
-    }
-
-    &._active {
-
-        & .main-nav__icon-block {
-            border-color: $accent-hover;
-        }
-
-        & .main-nav__icon {
-
-            & svg path {
-                fill: $accent;
-            }
-        }
-    }
+    // &:hover {
+    //     & .main-nav__icon-block {
+    //         background-color: $accent;
+    //         border-color: $accent;
+    //     }
+    //     & .main-nav__icon {
+    //         & svg path {
+    //             fill: #fff !important;
+    //         }
+    //     }
+    //     & .main-nav__title {
+    //         color: $accent;
+    //     }
+    // }
+    // &._active {
+    //     & .main-nav__icon-block {
+    //         border-color: $accent-hover;
+    //     }
+    //     & .main-nav__icon {
+    //         & svg path {
+    //             fill: $accent;
+    //         }
+    //     }
+    // }
 }
 
 .main-nav__icon-block {
@@ -127,7 +105,6 @@
 .main-nav__icon {
     width: 30px;
     height: 30px;
-
     & svg path {
         transition: $tr;
     }
@@ -139,4 +116,168 @@
     text-align: center;
     margin: 5px 0 0 0;
     transition: $tr;
+}
+
+$color: #9e9e9e,
+#AAD95F,
+#FACE31,
+#7f2aff,
+#ff7f00,
+#E30524,
+#2A7FFE;
+$color-length: length($color);
+@mixin hover_color($color_name, $number, $color_icon) {
+    &:nth-of-type(#{$number}):hover {
+        & .main-nav__icon-block {
+            background-color: $color_name;
+            border-color: $color_name;
+        }
+        & .main-nav__icon {
+            & svg path {
+                fill: $color_icon;
+                stroke: #fff
+            }
+        }
+        & .main-nav__title {
+            color: $color_name;
+        }
+    }
+}
+
+@mixin active_color($color_name, $number) {
+    &._active:nth-of-type(#{$number}),
+    &:focus:nth-of-type(#{$number}) {
+        & {
+            border-color: $color_name;
+        }
+        & .main-nav__icon {
+            & svg path {
+                fill: $color_name;
+            }
+        }
+    }
+}
+
+.main:not(.main_small) .main-nav__list .main-nav__item {
+    @for $i from 1 through $color-length {
+        @if $i==3 {
+            &._active:nth-of-type(#{$i}),
+            &:focus:nth-of-type(#{$i}) {
+                & .main-nav__icon-block {
+                    border-color: nth($color, $i);
+                }
+                & .main-nav__icon {
+                    & svg path {
+                        fill: nth($color, $i);
+                        stroke: #fff
+                    }
+                }
+                & .main-nav__title {
+                    color: nth($color, $i);
+                }
+            }
+        }
+        @else {
+            &._active:nth-of-type(#{$i}),
+            &:focus:nth-of-type(#{$i}) {
+                & .main-nav__icon-block {
+                    border-color: nth($color, $i);
+                }
+                & .main-nav__icon {
+                    & svg path {
+                        fill: nth($color, $i);
+                    }
+                }
+                & .main-nav__title {
+                    color: nth($color, $i);
+                }
+            }
+        }
+    }
+    @for $i from 1 through $color-length {
+        @if $i==3 {
+            &:nth-of-type(#{$i}):hover {
+                & .main-nav__icon-block {
+                    background-color: nth($color, $i);
+                    border-color: nth($color, $i);
+                }
+                & .main-nav__icon {
+                    & svg path {
+                        fill: #fff;
+                        stroke: #fff
+                    }
+                }
+                & .main-nav__title {
+                    color: nth($color, $i);
+                }
+            }
+        }
+        @else {
+            &:nth-of-type(#{$i}):hover {
+                & .main-nav__icon-block {
+                    background-color: nth($color, $i);
+                    border-color: nth($color, $i);
+                }
+                & .main-nav__icon {
+                    & svg path {
+                        fill: #fff;
+                    }
+                }
+                & .main-nav__title {
+                    color: nth($color, $i);
+                }
+            }
+        }
+    }
+}
+
+.main.main_small .main-nav__list .main-nav__item {
+    @for $i from 1 through $color-length {
+        @if $i==3 {
+            &._active:nth-of-type(#{$i}),
+            &:focus:nth-of-type(#{$i}) {
+                & {
+                    border-color: nth($color, $i);
+                }
+                & .main-nav__icon {
+                    & svg path {
+                        fill: nth($color, $i);
+                        stroke: nth($color, $i);
+                    }
+                }
+            }
+        }
+        @else {
+            @include active_color(nth($color, $i), $i);
+        }
+    }
+    @for $i from 1 through $color-length {
+        @if $i==3 {
+            &:nth-of-type(#{$i}):hover {
+                & {
+                    background-color: nth($color, $i);
+                    border-color: nth($color, $i);
+                }
+                & .main-nav__icon {
+                    & svg path {
+                        fill: #fff;
+                        stroke: #fff
+                    }
+                }
+            }
+        }
+        @else {
+            &:nth-of-type(#{$i}):hover {
+                & {
+                    background-color: nth($color, $i);
+                    border-color: nth($color, $i);
+                }
+                & .main-nav__icon {
+                    & svg path {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
 }

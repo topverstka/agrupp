@@ -1,0 +1,180 @@
+.main .container {
+    position: relative;
+}
+
+.block_birthdays {
+    width: 212px;
+    border: 1px solid $outline;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: -30px;
+    right: -208px;
+}
+
+.block_birthdays__header {
+    background: #F4AC41;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border-radius: 10px 10px 0 0;
+    padding: 9px 0 7px 12px;
+    font-family: $ffSecond;
+}
+
+.block_birthdays__picture {
+    margin: 18px 0 30px 0;
+    width: 258px;
+    transform: translateX(-38px);
+}
+
+.block_birthdays__btn {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    width: max-content;
+    color: $accent;
+    margin-bottom: 12px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    margin: 0 auto 12px auto;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        display: block;
+        background: var(--accent);
+    }
+}
+
+#modal-birthdays {
+    .modal__content {
+        max-width: 700px;
+        padding: 41px 0 50px 0;
+    }
+    .modal_line-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 100px;
+            margin-right: 20px
+        }
+        h2 {
+            margin-bottom: 0;
+            text-align: left;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 36px;
+        }
+    }
+}
+
+#modal-birthdays {
+    .employee-card__img-block {
+        width: 72px;
+        height: 72px;
+        min-width: 72px;
+    }
+    .block-border {
+        padding: 0 40px;
+        border: none;
+        gap: 20px;
+        margin-top: 20px;
+        max-height: 348px;
+        &.big-list {
+            padding: 1px 25px 0 40px;
+            margin-right: 10px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            .employee-card {
+                &:nth-of-type(even) .employee-card__popup-block {
+                    left: auto;
+                    right: 46px;
+                    &:before {
+                        left: auto;
+                        right: 10px
+                    }
+                }
+                &:nth-last-child(-n+2) .employee-card__popup-block {
+                    bottom: 138px;
+                    &:before {
+                        top: auto;
+                        bottom: -5px
+                    }
+                    &:after {
+                        bottom: 0;
+                        top: auto;
+                        transform: translate(0, 100%);
+                    }
+                }
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $main;
+            border-radius: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: $outline;
+        }
+    }
+    .block-border__section {
+        padding: 0;
+        grid-gap: 20px;
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $main;
+            border-radius: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: $outline;
+        }
+    }
+    .employee-card {
+        outline: 1px solid $outline;
+        border-radius: 10px;
+        padding: 15px 20px;
+        height: max-content;
+    }
+    .employee-card__title {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 15px;
+    }
+    .employee-card__work-pos {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: $second;
+    }
+    .employee-card__work-time {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: $second
+    }
+    .employee-card__popup-btn {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .employee-card__content {
+        margin-left: 20px
+    }
+    .employee-card__popup {
+        margin-top: 5px;
+        display: flex
+    }
+}

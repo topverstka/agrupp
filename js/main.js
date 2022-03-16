@@ -614,6 +614,13 @@ if (textarea_deligation) {
 }
 
 
+if (document.querySelector('#modal-birthdays')) {
+    if (document.querySelector('#modal-birthdays .block-border__section').childElementCount > 2) {
+        document.querySelector('#modal-birthdays .block-border').classList.add('big-list');
+    }
+}
+
+
 
 
 let previous = document.querySelector('.sounds__pre');
