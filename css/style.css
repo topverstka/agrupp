@@ -4548,7 +4548,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 @-webkit-keyframes sendPreloader {
   from {
-    -webkit-transform: translate(-50%, -50%) rotate(0);
             transform: translate(-50%, -50%) rotate(0);
   }
   to {
