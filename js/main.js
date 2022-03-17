@@ -739,7 +739,7 @@ function pausesong() {
 //     if (index_no < All_song.length - 1) {
 //         index_no += 1;
 //         load_track(index_no);
-//         playsong();;
+//         playsong();
 //     } else {
 //         index_no = 0;
 //         load_track(index_no);
