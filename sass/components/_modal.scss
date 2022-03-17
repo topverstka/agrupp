@@ -59,6 +59,18 @@
     margin: 32px 0 0 0;
 }
 
+#modal__form {
+    .modal__submit {
+        background: var(--color-page)
+    }
+    input[type=file]+label {
+        color: var(--color-page)
+    }
+    svg path {
+        fill: var(--color-page)
+    }
+}
+
 .modal__attention {
     font-size: 14px;
     color: $second;

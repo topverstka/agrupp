@@ -1640,6 +1640,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   margin: 32px 0 0 0;
 }
 
+#modal__form .modal__submit {
+  background: var(--color-page);
+}
+
+#modal__form input[type=file] + label {
+  color: var(--color-page);
+}
+
+#modal__form svg path {
+  fill: var(--color-page);
+}
+
 .modal__attention {
   font-size: 14px;
   color: var(--second);
@@ -1709,6 +1721,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .employee-card_best {
   display: none;
+}
+
+.employee-card_best:hover {
+  background: var(--color-background);
+  border-color: var(--color-page);
 }
 
 .employee-card_best._show {
@@ -3233,7 +3250,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .faq-section__card._show .faq-section__card-header {
-  background: #E8E9ED;
+  background: var(--color-background);
 }
 
 .faq-section__card._show .faq-section__card-header-title {
@@ -3241,7 +3258,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .faq-section__card._show .faq-section__card-header-arrow .acc-circle {
-  fill: #E8E9ED;
+  fill: transparent;
 }
 
 .faq-section__card._show .faq-section__card-header-arrow .acc-arrow {
@@ -3258,8 +3275,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .faq-section__card-header:hover .faq-section__card-header-arrow .acc-circle {
-  fill: var(--accent);
-  stroke: var(--accent);
+  fill: var(--color-page);
+  stroke: var(--color-page);
 }
 
 .faq-section__card-header:hover .faq-section__card-header-arrow .acc-arrow {
@@ -3369,7 +3386,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .faq-section__card-acc-column button {
-  background: var(--accent);
+  background: var(--color-page);
   border-radius: 5px;
   font-weight: 600;
   font-size: 14px;
@@ -3626,8 +3643,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .photo-section__slider .active {
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid var(--color-page);
+  color: var(--color-page);
 }
 
 .photo-section__slider .swiper-pagination {
@@ -3704,7 +3721,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .photo-section__wrapper-menu li.active {
-  color: var(--accent);
+  color: var(--color-page);
 }
 
 .photo-section__wrapper-container {
@@ -3832,7 +3849,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .greeting-blog__photo button {
-  background: var(--accent);
+  background: var(--color-page);
   padding: 9px 30px;
   font-weight: 600;
   font-size: 14px;
@@ -3921,8 +3938,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .new-appeal__block:hover {
-  background: var(--background-hover);
-  border: 1px solid var(--accent-hover);
+  background: var(--color-background);
+  border: 1px solid var(--color-page);
 }
 
 .new-appeal__block-title {
@@ -3983,6 +4000,36 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .page-blog_director .container {
   padding: 0 23px;
+}
+
+.faq-section__card-header-body {
+  position: relative;
+}
+
+.faq-section__card-header-body:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--color-page);
+  border-radius: 10px 0px 0px 10px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.faq-section__card-header-body:hover {
+  background: var(--color-background);
+}
+
+.faq-section__card._show .faq-section__card-header-body:after {
+  border-radius: 10px 0px 0px 0;
+}
+
+.faq-section__show:hover {
+  color: var(--color-page);
+  border-color: var(--color-page);
 }
 
 .professional-view__admin_element ul {
@@ -4233,7 +4280,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .professional-view__element-info-comments-top button:hover {
-  color: var(--accent);
+  color: var(--color-page);
 }
 
 .professional-view__element-info-comments-top p {

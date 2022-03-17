@@ -1,3 +1,7 @@
+// :root {
+//     --color-page: #AAD95F;
+//     --color-background: #F7FBEF
+// }
 .greeting-blog {
     &__wrap {
         display: flex;
@@ -18,7 +22,7 @@
             padding: 7px;
         }
         button {
-            background: $accent;
+            background: var(--color-page);
             padding: 9px 30px;
             font-weight: 600;
             font-size: 14px;
@@ -87,8 +91,8 @@
     }
     &__block {
         &:hover {
-            background: $background-hover;
-            border: 1px solid $accent-hover;
+            background: var(--color-background);
+            border: 1px solid var(--color-page);
         }
         border: 1px solid $outline;
         border-radius: 10px;
@@ -145,4 +149,33 @@
 
 .page-blog_director .container {
     padding: 0 23px
+}
+
+.faq-section__card-header-body {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 5px;
+        height: 100%;
+        background: var(--color-page);
+        border-radius: 10px 0px 0px 10px;
+        transition: .3s
+    }
+    &:hover {
+        background: var(--color-background)
+    }
+}
+
+.faq-section__card._show {
+    .faq-section__card-header-body:after {
+        border-radius: 10px 0px 0px 0;
+    }
+}
+
+.faq-section__show:hover {
+    color: var(--color-page);
+    border-color: var(--color-page);
 }

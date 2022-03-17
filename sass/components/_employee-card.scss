@@ -5,55 +5,47 @@
 
 .employee-card_best {
     display: none;
-
+    &:hover {
+        background: var(--color-background);
+        border-color: var(--color-page);
+    }
     &._show {
-        display: block; 
+        display: block;
         // animation: showElem .3s linear forwards;
     }
-
     & .employee-card__body {
         padding: 20px 20px 20px 30px;
     }
-
     & .employee-card__popup-block {
         width: 260px;
     }
-
     // Появление всплывашки сверху у последних 3 карточек
     // &._show {
     //     background: #000;
     // }
-
     &._popup-top {
-
         & .employee-card__popup-btn {
-    
             &:hover {
-            
-                & + .employee-card__popup-block {
+                &+.employee-card__popup-block {
                     top: -16px;
                     bottom: auto !important;
                 }
             }
         }
-
         & .employee-card__popup-block {
             transform: translate(0, -100%);
             top: -20px;
             bottom: auto !important;
             transition: $tr;
-
             &:hover {
                 top: -16px;
                 bottom: auto !important;
             }
-
             &::before {
                 top: auto;
                 bottom: -5px;
                 transform: rotate(135deg);
             }
-
             &::after {
                 top: auto;
                 bottom: 0;
@@ -81,11 +73,9 @@
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
-
     & img {
         object-fit: cover;
     }
-
     & span {
         display: block;
         width: 100%;
@@ -110,19 +100,16 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    
     &:nth-child(1) {
         z-index: 2;
         top: -10px;
         right: -10px;
     }
-    
     &:nth-child(2) {
         z-index: 3;
         top: -10px;
         right: -20px;
     }
-    
     &:nth-child(3) {
         z-index: 1;
         top: -10px;
@@ -160,10 +147,7 @@
     margin: 6px 0 0 0;
 }
 
-.employee-card__popup_presents {
-
-}
-
+.employee-card__popup_presents {}
 
 .employee-card__popup-btn {
     position: relative;
@@ -172,7 +156,6 @@
     font-weight: 500;
     color: $accent;
     // border-bottom: 1px solid $accent;
-
     &::before {
         content: '';
         position: absolute;
@@ -183,10 +166,8 @@
         display: block;
         background: $accent;
     }
-
     &:hover {
-
-        & + .employee-card__popup-block {
+        &+.employee-card__popup-block {
             bottom: -16px;
             visibility: visible;
             opacity: 1;
@@ -205,18 +186,15 @@
     border-radius: 10px;
     box-shadow: 0px 30px 90px rgba(43, 65, 81, 0.11);
     transition: $tr;
-
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-
     &:hover {
         bottom: -16px;
         visibility: visible;
         opacity: 1;
         pointer-events: all;
     }
-
     &::before {
         content: '';
         position: absolute;
@@ -230,7 +208,6 @@
         border: 1px solid $outline;
         border-radius: 5px;
     }
-
     &::after {
         content: '';
         position: absolute;
@@ -267,11 +244,9 @@
     height: 50px;
     cursor: pointer;
     transition: $tr;
-
     &:hover {
         transform: scale(1.05);
     }
-
     &:not(:first-child) {
         margin: 0 0 0 5px;
     }
@@ -288,7 +263,6 @@
     position: relative;
     width: 32px;
     height: 32px;
-
     &::before {
         content: '';
         position: absolute;
@@ -296,12 +270,10 @@
         left: 50%;
         width: 110%;
         height: 110%;
-
         transform: translate(-50%, -50%);
         background: linear-gradient(90deg, #EEBE47 0%, #F8DB77 12.04%, #FFEE96 20.97%, #A2621E 44.62%, #EEA54C 66.67%, #EEBE47 100%);
         border-radius: 50%;
     }
-
     & img {
         position: relative;
         z-index: 1;
@@ -334,18 +306,14 @@
     flex-direction: column;
     margin: 15px 0 0 0;
     overflow-y: auto;
-    
     scrollbar-width: thin;
     scrollbar-color: #AFAFAF;
-
     &::-webkit-scrollbar {
         width: 3px;
     }
-
     &::-webkit-scrollbar-track {
         background: #F0F0F0;
     }
-
     &::-webkit-scrollbar-thumb {
         background-color: #AFAFAF;
     }
@@ -354,13 +322,10 @@
 .employee-card__popup-award {
     display: flex;
     align-items: center;
-
     &:not(:first-child) {
         margin: 10px 0 0 0;
     }
-
     &:hover {
-
         & .employee-card__popup-award-title {
             color: $accent;
         }
