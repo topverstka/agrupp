@@ -4019,6 +4019,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   transition: .3s;
 }
 
+.faq-section__card-header-body:hover {
+  background: var(--color-background);
+  border-radius: 10px;
+}
+
 .faq-section__card._show .faq-section__card-header-body:after {
   border-radius: 10px 0px 0px 0;
 }
