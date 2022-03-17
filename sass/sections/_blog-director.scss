@@ -165,7 +165,8 @@
         transition: .3s
     }
     &:hover {
-        background: var(--color-background)
+        background: var(--color-background);
+        border-radius: 10px;
     }
 }
 
