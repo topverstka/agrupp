@@ -625,7 +625,7 @@ if (document.querySelector('#modal-birthdays')) {
 
 let previous = document.querySelector('.sounds__pre');
 let play = document.querySelector('.sounds_section__play');
-let slider = document.querySelector('.sounds_section__duration_slider');
+let slider = document.querySelector('.sounds_section__duration_slider') || '';
 let next = document.querySelector('.sounds__next');
 //let title = document.querySelector('.sounds__title');
 let recent_volume = document.querySelector('.sounds__volume');
@@ -807,4 +807,10 @@ function range_slider() {
             playsong();
         }
     }
+}
+
+const containerMenu = find('.structure-menu__container');
+if (containerMenu) {
+    const countElementMenu = containerMenu.childElementCount;
+    containerMenu.setAttribute('data-counter', countElementMenu);
 }
