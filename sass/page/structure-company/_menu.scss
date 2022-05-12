@@ -22,14 +22,14 @@
 }
 
 .structure-menu__element {
-    border: 1px solid #333333;
+    outline: 1px solid #333333;
     border-radius: 10px;
     padding: 10px 10px 10px 15px;
     display: flex;
     align-items: center;
     &:hover {
         background: var(--color-page);
-        border: 1px solid transparent;
+        outline: 1px solid transparent;
         box-shadow: 0px 20px 25px -10px rgba(38, 117, 227, 0.3);
         .structure-menu__element-text {
             color: #fff
